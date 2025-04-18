@@ -8,6 +8,7 @@ import argparse
 import subprocess
 import resource
 import time
+import re
 from functools import wraps
 
 import logging
@@ -15,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 # https://crates.io/api/v1/crates?category=api-bindings&page=50&per_page=100
 BASE_URL = "https://crates.io/api/v1"
-
+SUB_PROCESS_TIMEOUT = 60 * 30
 RUST_TOOLCHAIN = "nightly-2024-02-08-x86_64-unknown-linux-gnu"
 # cargo update serde --precise 1.0.196
 # cargo update zerofrom --precise 0.1.5
@@ -60,6 +61,12 @@ def subprocess_time_profiler(func):
         return (result, real_time, user_time, sys_time)
     return wrapper
     
+def parse_time_str(s: str) -> list[float]:
+    pattern = r":(\d+\.?\d*)"
+    numbers = re.findall(pattern, s)
+    # convert to float
+    result = [float(num) for num in numbers]
+    return result
 
 # get the total number of crates in a category
 def get_total_crates(category: str) -> int:
@@ -90,46 +97,67 @@ def get_crates(page: int, per_page: int, category: str) -> list:
 def clone_crate(url: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect")
     logging.debug(f"\nClone {url} to {cwd}")
-    result = subprocess.run(["git", "clone", url], cwd=cwd)
-    if result.returncode == 0:
-        logging.info(f"Clone {url} success")
-        return True
-    else:
-        logging.error(f"Clone {url} failed")
+    try:
+        result = subprocess.run(["git", "clone", url], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Clone {url} success")
+            return True
+        else:
+            logging.error(f"Clone {url} failed")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
         return False
-    pass
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
 
 @subprocess_time_profiler
 def init_submodule(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     logging.debug(f"\nInit submodule in {cwd}")
-    result = subprocess.run(["git", "submodule", "update", "--init", "--recursive"], cwd=cwd)
-    if result.returncode == 0:
-        logging.info(f"Init submodule in {cwd} success")
-        return True
-    else:
-        logging.error(f"Init submodule in {cwd} failed")
+    try:
+        result = subprocess.run(["git", "submodule", "update", "--init", "--recursive"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Init submodule in {cwd} success")
+            return True
+        else:
+            logging.error(f"Init submodule in {cwd} failed")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
         return False
-    pass
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
 
 def override_toolchain(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
-    result = subprocess.run(["rustup", "override", "set", RUST_TOOLCHAIN], cwd=cwd)
-    subprocess.run(["cargo", "update", "serde", "--precise", "1.0.196"], cwd=cwd)
-    subprocess.run(["cargo", "update", "native-tls", "--precise", "0.2.13"], cwd=cwd)
-    subprocess.run(["cargo", "update", "zerofrom", "--precise", "0.1.5"], cwd=cwd)
-    subprocess.run(["cargo", "update", "litemap", "--precise", "0.7.4"], cwd=cwd)
-    if result.returncode == 0:
-        logging.info(f"Override toolchain in {cwd} success")
-        return True
-    else:
-        logging.error(f"Override toolchain in {cwd} failed")
+    try:
+        result = subprocess.run(["rustup", "override", "set", RUST_TOOLCHAIN], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "update", "serde", "--precise", "1.0.196"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "update", "native-tls", "--precise", "0.2.13"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "update", "zerofrom", "--precise", "0.1.5"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "update", "litemap", "--precise", "0.7.4"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "vendor"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Override toolchain in {cwd} success")
+            return True
+        else:
+            logging.error(f"Override toolchain in {cwd} failed")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
         return False
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
+    pass
 
 def cargo_clean(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     logging.debug(f"\nClean {dirname} in {cwd}")
-    result = subprocess.run(["cargo", "clean"], cwd=cwd)
+    result = subprocess.run(["cargo", "clean"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
     if result.returncode == 0:
         logging.info(f"Clean {dirname} success")
         return True
@@ -142,18 +170,58 @@ def cargo_clean(dirname: str) -> bool:
 def build_crate(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     logging.info(f"\nBuild {dirname} in {cwd}")
-    result = subprocess.run(["cargo", "build", "-Zcheck-cfg"], cwd=cwd)
-    if result.returncode == 0:
-        logging.info(f"Build {dirname} success")
-        return True
-    else:
-        logging.error(f"Build {dirname} failed")
+    try:
+        result = subprocess.run(["cargo", "build", "-Zcheck-cfg"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Build {dirname} success")
+            return True
+        else:
+            logging.error(f"Build {dirname} failed")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
         return False
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
+    pass
 
 @subprocess_time_profiler
 def gen_crate_ir(dirname: str) -> bool:
-    pass
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
+    logging.info(f"Gen IR {dirname} in {cwd}")
+    try:
+        result = subprocess.run(["cargo", "ffi-checker"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Gen IR {dirname} success")
+            return True
+        else:
+            logging.error(f"Gen IR {dirname} failed")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
+        return False
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
 
+def check_valid(dirname: str) -> bool:
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname, "target", "entry_points")
+    crate_ffi_record_files = []
+    for root,dirs,files in os.walk(cwd, topdown=False):
+        for name in files:
+            crate_ffi_record_files.append(os.path.join(root, name))
+    ffi_cnt = 0
+    for file in crate_ffi_record_files:
+        with open(file, "r") as f:
+            lines = f.readlines()
+            for line in lines:
+                if line.startswith("FFI: "):
+                    ffi_cnt += 1
+    if ffi_cnt <= 0:
+        return False
+    else:
+        return True
 
 
 def init():
@@ -243,9 +311,6 @@ def build(args: argparse.Namespace) -> bool:
         ret_clean = cargo_clean(dirname)
         ret_build, *build_time = build_crate(dirname)
 
-        ret_clean = cargo_clean(dirname)
-        ret_build, *build_time = build_crate(dirname)
-
         if not (ret_clone and ret_submodule and ret_override and ret_clean and ret_build):
             all_success = False
             logging.error(f"Build {name} failed")
@@ -254,18 +319,27 @@ def build(args: argparse.Namespace) -> bool:
         normal_build_time_str = f"real_time:{build_time[0]:.2f}s, user_time:{build_time[1]:.2f}s, sys_time:{build_time[2]:.2f}s"
 
         ret_clean = cargo_clean(dirname)
-        ret_gen_ir = gen_crate_ir(dirname)
+        ret_gen_ir, *ffi_checker_build_time_info = gen_crate_ir(dirname)
+
+        ffi_checker_build_time_str = f"real_time:{ffi_checker_build_time_info[0]:.2f}s, user_time:{ffi_checker_build_time_info[1]:.2f}s, sys_time:{ffi_checker_build_time_info[2]:.2f}s"
 
         if not ret_gen_ir or not ret_clean:
             all_success = False
             logging.error(f"Generate IR for {name} failed")
             continue
+
+        ret_valid = check_valid(dirname)
         
         logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
         df.loc[index, "build_success"] = ret_build
+        df.loc[index, "valid_proj"] = ret_valid
+        df.loc[index, "ffi_checker_success"] = ret_gen_ir
+        df.loc[index, "ffi_checker_build_time"] = ffi_checker_build_time_str
         df.loc[index, "normal_build_time"] = normal_build_time_str
+
+        # save data each time
+        df.to_csv("crates.csv", index=False)
     
-    df.to_csv("crates.csv", index=False)
 
 def clean(args: argparse.Namespace) -> bool:
     if args.skip is not None and args.limit is not None:
