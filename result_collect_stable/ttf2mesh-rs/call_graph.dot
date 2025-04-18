@@ -1,0 +1,39 @@
+digraph G {
+    rankdir=LR;
+    Node1cab50f012d7923f77b51016845aa3ae [color=red, label="ttf_list_system_fonts"];
+    Node1c7284c8dc2b8e41a60d3ff4144bf0d8 [color=red, label="ttf_list_match_id"];
+    Node1086719cab16e6bb7fd84cef0be06793 [color=red, label="ttf_list_fonts"];
+    Node6c1a5a19bd7b4585a66e7cad9fb2d903 [color=red, label="ttf_load_from_file"];
+    Node1b346135505e54075a3471238af7fc54 [color=red, label="ttf_outline_evenodd_base"];
+    Node8468acb6a20cfb45ccb371c580b83466 [color=red, label="ttf_outline_evenodd"];
+    Nodea0304784cca24feef6561a7568cd67f0 [color=red, label="ttf_free_list"];
+    Node5d61ead49c9601955c510df7c2c28b5c [color=red, label="ttf_glyph2svgpath"];
+    Node1e388a7b3ef1a84275eebbd9f01f5110 [color=red, label="ttf_glyph2mesh"];
+    Node625a5af174631dad6c93089d93664bb1 [label="ttf2mesh::glyph::Glyph::to_2d_mesh"];
+    Node625a5af174631dad6c93089d93664bb1 -> Node1e388a7b3ef1a84275eebbd9f01f5110;
+    Noded6303c300e44574f91a10d6cce32d9ad [color=red, label="ttf_export_to_obj"];
+    Node13882e7800dc4310124fa1a23e7b9586 [color=red, label="ttf_splitted_outline"];
+    Node0fc1c0d10f990448fc52d0c61c3ca2f0 [color=red, label="ttf_free_mesh"];
+    Nodec3756280704d8b799d7f0183de7716e5 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::free"];
+    Nodec3756280704d8b799d7f0183de7716e5 -> Node0fc1c0d10f990448fc52d0c61c3ca2f0;
+    Node8b051065b10bc20dfb9885d73553b84e [color=red, label="ttf_outline_contour_info"];
+    Nodec23d6464417077b096821534bf7d75a5 [color=red, label="ttf_free_outline"];
+    Node184c10adf8d7b59760d598894bdb0de4 [color=red, label="ttf_free"];
+    Node02e1e57e31a10b17f9802e91d81499a1 [label="<ttf2mesh::ttf::TTFFile as core::ops::drop::Drop>::drop"];
+    Node02e1e57e31a10b17f9802e91d81499a1 -> Node184c10adf8d7b59760d598894bdb0de4;
+    Node928e1ae24130a1d6b5d6357fb0df0b9d [color=red, label="ttf_list_match"];
+    Node43336ca813ec01b073daa32136dfcdf9 [color=red, label="ttf_find_glyph"];
+    Node1119697b7723e03f53124a19dee43a22 [label="ttf2mesh::ttf::TTFFile::glyph_from_char"];
+    Node1119697b7723e03f53124a19dee43a22 -> Node43336ca813ec01b073daa32136dfcdf9;
+    Node10ecf63e4dd2aa522f03f87b6574d16f [color=red, label="ttf_load_from_mem"];
+    Nodeceb0d1da48fefae63ec6125219a3a08e [label="ttf2mesh::ttf::TTFFile::from_buffer_vec"];
+    Nodeceb0d1da48fefae63ec6125219a3a08e -> Node10ecf63e4dd2aa522f03f87b6574d16f;
+    Node90b1e941a96b80cc8b8b23bcf1bc707a [color=red, label="ttf_linear_outline"];
+    Nodec63785d385644983de4c10aefa0a9a6c [color=red, label="ttf_glyph2mesh3d"];
+    Node306e706e028a26e685bd79ff23dd5e39 [label="ttf2mesh::glyph::Glyph::to_3d_mesh"];
+    Node306e706e028a26e685bd79ff23dd5e39 -> Nodec63785d385644983de4c10aefa0a9a6c;
+    Nodea94538bd9afb068fceafba6882207800 [color=red, label="ttf_free_mesh3d"];
+    Node437c7f7ac5a6a85f58c4dacf285c2c60 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::free"];
+    Node437c7f7ac5a6a85f58c4dacf285c2c60 -> Nodea94538bd9afb068fceafba6882207800;
+
+}

@@ -1,0 +1,1060 @@
+digraph G {
+    rankdir=LR;
+    subgraph Nodef2d309cbda75a7aa {
+        style=filled;
+        color=lightgrey;
+        label="<core::result::Result<T,F> as core::ops::try_trait::FromResidual<core::result::Result<core::convert::Infallible,E>>>::from_residual";
+        rankdir=TB;
+        Nodef2d309cbda75a7aa_BB31b63380a252cd62 [label="<core::result::Result<T,F> as core::ops::try_trait::FromResidual<core::result::Result<core::convert::Infallible,E>>>::from_residual"];
+        Nodef2d309cbda75a7aa_BBa486304289c3ae15 [label="Return"];
+        Nodef2d309cbda75a7aa_BB31b63380a252cd62 -> Nodef2d309cbda75a7aa_BBa486304289c3ae15;
+
+    }
+    subgraph Node17c6a05eb1b025c0 {
+        style=filled;
+        color=lightgrey;
+        label="<core::result::Result<T,F> as core::ops::try_trait::FromResidual<core::result::Result<core::convert::Infallible,E>>>::from_residual";
+        rankdir=TB;
+        Node17c6a05eb1b025c0_BB31b63380a252cd62 [label="<core::result::Result<T,F> as core::ops::try_trait::FromResidual<core::result::Result<core::convert::Infallible,E>>>::from_residual"];
+        Node17c6a05eb1b025c0_BBa486304289c3ae15 [label="Return"];
+        Node17c6a05eb1b025c0_BB31b63380a252cd62 -> Node17c6a05eb1b025c0_BBa486304289c3ae15;
+
+    }
+    subgraph Noded434110e9705ccac {
+        style=filled;
+        color=lightgrey;
+        label="<&T as core::fmt::Debug>::fmt";
+        rankdir=TB;
+        Noded434110e9705ccac_BB31b63380a252cd62 [label="<&T as core::fmt::Debug>::fmt"];
+        Noded434110e9705ccac_BBa486304289c3ae15 [label="Return"];
+        Noded434110e9705ccac_BB31b63380a252cd62 -> Noded434110e9705ccac_BBa486304289c3ae15;
+
+    }
+    subgraph Node7fb9b9d29c935165 {
+        style=filled;
+        color=lightgrey;
+        label="<() as core::fmt::Debug>::fmt";
+        rankdir=TB;
+        Node7fb9b9d29c935165_BB31b63380a252cd62 [label="<() as core::fmt::Debug>::fmt"];
+        Node7fb9b9d29c935165_BBa486304289c3ae15 [label="Return"];
+        Node7fb9b9d29c935165_BB31b63380a252cd62 -> Node7fb9b9d29c935165_BBa486304289c3ae15;
+
+    }
+    subgraph Node926a0cb2b0e98989 {
+        style=filled;
+        color=lightgrey;
+        label="core::fmt::Arguments::new_v1";
+        rankdir=TB;
+        Node926a0cb2b0e98989_BB31b63380a252cd62 [label="core::fmt::Arguments::new_v1"];
+        Node926a0cb2b0e98989_BBadb51a2637edcca4 [label="bb2"];
+        Node926a0cb2b0e98989_BB31b63380a252cd62 -> Node926a0cb2b0e98989_BBadb51a2637edcca4;
+        Node926a0cb2b0e98989_BB1db1feea5e86a057 [label="bb1"];
+        Node926a0cb2b0e98989_BB31b63380a252cd62 -> Node926a0cb2b0e98989_BB1db1feea5e86a057;
+        Node926a0cb2b0e98989_BB693ac12414dd0aca [label="bb4"];
+        Node926a0cb2b0e98989_BBadb51a2637edcca4 -> Node926a0cb2b0e98989_BB693ac12414dd0aca;
+        Node926a0cb2b0e98989_BB5f903e496691755 [label="bb6"];
+        Node926a0cb2b0e98989_BBadb51a2637edcca4 -> Node926a0cb2b0e98989_BB5f903e496691755;
+        Node926a0cb2b0e98989_BBadb51a2637edcca4 [label="bb2"];
+        Node926a0cb2b0e98989_BB1db1feea5e86a057 -> Node926a0cb2b0e98989_BBadb51a2637edcca4;
+        Node926a0cb2b0e98989_BBd40ffbe880b44889 [label="bb3"];
+        Node926a0cb2b0e98989_BB1db1feea5e86a057 -> Node926a0cb2b0e98989_BBd40ffbe880b44889;
+        Node926a0cb2b0e98989_BBa486304289c3ae15 [label="Return"];
+        Node926a0cb2b0e98989_BBd40ffbe880b44889 -> Node926a0cb2b0e98989_BBa486304289c3ae15;
+
+    }
+    subgraph Node7112fad318b50955 {
+        style=filled;
+        color=lightgrey;
+        label="core::fmt::Arguments::new_const";
+        rankdir=TB;
+        Node7112fad318b50955_BB31b63380a252cd62 [label="core::fmt::Arguments::new_const"];
+        Node7112fad318b50955_BB1db1feea5e86a057 [label="bb1"];
+        Node7112fad318b50955_BB31b63380a252cd62 -> Node7112fad318b50955_BB1db1feea5e86a057;
+        Node7112fad318b50955_BBd40ffbe880b44889 [label="bb3"];
+        Node7112fad318b50955_BB31b63380a252cd62 -> Node7112fad318b50955_BBd40ffbe880b44889;
+        Node7112fad318b50955_BBa486304289c3ae15 [label="Return"];
+        Node7112fad318b50955_BBd40ffbe880b44889 -> Node7112fad318b50955_BBa486304289c3ae15;
+
+    }
+    subgraph Node156565eae0c1f2bc {
+        style=filled;
+        color=lightgrey;
+        label="core::ptr::drop_in_place<&()>";
+        rankdir=TB;
+        Node156565eae0c1f2bc_BB31b63380a252cd62 [label="core::ptr::drop_in_place<&()>"];
+        Node156565eae0c1f2bc_BBa486304289c3ae15 [label="Return"];
+        Node156565eae0c1f2bc_BB31b63380a252cd62 -> Node156565eae0c1f2bc_BBa486304289c3ae15;
+
+    }
+    subgraph Nodef5a8eab30c9d2213 {
+        style=filled;
+        color=lightgrey;
+        label="core::ptr::drop_in_place<alloc::vec::Vec<u8>>";
+        rankdir=TB;
+        Nodef5a8eab30c9d2213_BB31b63380a252cd62 [label="core::ptr::drop_in_place<alloc::vec::Vec<u8>>"];
+        Nodef5a8eab30c9d2213_BB693ac12414dd0aca [label="bb4"];
+        Nodef5a8eab30c9d2213_BB31b63380a252cd62 -> Nodef5a8eab30c9d2213_BB693ac12414dd0aca;
+        Nodef5a8eab30c9d2213_BB8813595e8fceb68a [label="cleanup"];
+        Nodef5a8eab30c9d2213_BB31b63380a252cd62 -> Nodef5a8eab30c9d2213_BB8813595e8fceb68a;
+        Nodef5a8eab30c9d2213_BBa486304289c3ae15 [label="Return"];
+        Nodef5a8eab30c9d2213_BB693ac12414dd0aca -> Nodef5a8eab30c9d2213_BBa486304289c3ae15;
+        Nodef5a8eab30c9d2213_BBd40ffbe880b44889 [label="bb3"];
+        Nodef5a8eab30c9d2213_BB8813595e8fceb68a -> Nodef5a8eab30c9d2213_BBd40ffbe880b44889;
+        Nodef5a8eab30c9d2213_BB1db1feea5e86a057 [label="bb1"];
+        Nodef5a8eab30c9d2213_BBd40ffbe880b44889 -> Nodef5a8eab30c9d2213_BB1db1feea5e86a057;
+        Nodef5a8eab30c9d2213_BB84e1fae786f61c8f [label="terminate"];
+        Nodef5a8eab30c9d2213_BBd40ffbe880b44889 -> Nodef5a8eab30c9d2213_BB84e1fae786f61c8f;
+        Nodef5a8eab30c9d2213_BBa486304289c3ae15 [label="Return"];
+        Nodef5a8eab30c9d2213_BB1db1feea5e86a057 -> Nodef5a8eab30c9d2213_BBa486304289c3ae15;
+
+    }
+    subgraph Nodee10808f8d7eed1de {
+        style=filled;
+        color=lightgrey;
+        label="core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>";
+        rankdir=TB;
+        Nodee10808f8d7eed1de_BB31b63380a252cd62 [label="core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>"];
+        Nodee10808f8d7eed1de_BBa486304289c3ae15 [label="Return"];
+        Nodee10808f8d7eed1de_BB31b63380a252cd62 -> Nodee10808f8d7eed1de_BBa486304289c3ae15;
+
+    }
+    subgraph Node55f31c61fe60e0bd {
+        style=filled;
+        color=lightgrey;
+        label="core::ptr::drop_in_place<core::num::error::TryFromIntError>";
+        rankdir=TB;
+        Node55f31c61fe60e0bd_BB31b63380a252cd62 [label="core::ptr::drop_in_place<core::num::error::TryFromIntError>"];
+        Node55f31c61fe60e0bd_BBa486304289c3ae15 [label="Return"];
+        Node55f31c61fe60e0bd_BB31b63380a252cd62 -> Node55f31c61fe60e0bd_BBa486304289c3ae15;
+
+    }
+    subgraph Nodef90467da8c2476de {
+        style=filled;
+        color=lightgrey;
+        label="core::str::traits::<impl core::cmp::PartialEq for str>::eq";
+        rankdir=TB;
+        Nodef90467da8c2476de_BB31b63380a252cd62 [label="core::str::traits::<impl core::cmp::PartialEq for str>::eq"];
+        Nodef90467da8c2476de_BBa486304289c3ae15 [label="Return"];
+        Nodef90467da8c2476de_BB31b63380a252cd62 -> Nodef90467da8c2476de_BBa486304289c3ae15;
+
+    }
+    subgraph Nodebe9670a2909190b3 {
+        style=filled;
+        color=lightgrey;
+        label="core::char::methods::encode_utf16_raw";
+        rankdir=TB;
+        Nodebe9670a2909190b3_BB31b63380a252cd62 [label="core::char::methods::encode_utf16_raw"];
+        Nodebe9670a2909190b3_BB1db1feea5e86a057 [label="bb1"];
+        Nodebe9670a2909190b3_BB31b63380a252cd62 -> Nodebe9670a2909190b3_BB1db1feea5e86a057;
+        Nodebe9670a2909190b3_BB693ac12414dd0aca [label="bb4"];
+        Nodebe9670a2909190b3_BB31b63380a252cd62 -> Nodebe9670a2909190b3_BB693ac12414dd0aca;
+        Nodebe9670a2909190b3_BBadb51a2637edcca4 [label="bb2"];
+        Nodebe9670a2909190b3_BB1db1feea5e86a057 -> Nodebe9670a2909190b3_BBadb51a2637edcca4;
+        Nodebe9670a2909190b3_BBd40ffbe880b44889 [label="bb3"];
+        Nodebe9670a2909190b3_BB1db1feea5e86a057 -> Nodebe9670a2909190b3_BBd40ffbe880b44889;
+        Nodebe9670a2909190b3_BB2086ba6d90fd48eb [label="bb5"];
+        Nodebe9670a2909190b3_BB693ac12414dd0aca -> Nodebe9670a2909190b3_BB2086ba6d90fd48eb;
+        Nodebe9670a2909190b3_BB2086ba6d90fd48eb [label="bb5"];
+        Nodebe9670a2909190b3_BBadb51a2637edcca4 -> Nodebe9670a2909190b3_BB2086ba6d90fd48eb;
+        Nodebe9670a2909190b3_BB78769979a9437f38 [label="bb9"];
+        Nodebe9670a2909190b3_BBd40ffbe880b44889 -> Nodebe9670a2909190b3_BB78769979a9437f38;
+        Nodebe9670a2909190b3_BB5f903e496691755 [label="bb6"];
+        Nodebe9670a2909190b3_BB2086ba6d90fd48eb -> Nodebe9670a2909190b3_BB5f903e496691755;
+        Nodebe9670a2909190b3_BBc082569aea69b08b [label="bb7"];
+        Nodebe9670a2909190b3_BB2086ba6d90fd48eb -> Nodebe9670a2909190b3_BBc082569aea69b08b;
+        Nodebe9670a2909190b3_BBa486304289c3ae15 [label="Return"];
+        Nodebe9670a2909190b3_BB78769979a9437f38 -> Nodebe9670a2909190b3_BBa486304289c3ae15;
+        Nodebe9670a2909190b3_BB78769979a9437f38 [label="bb9"];
+        Nodebe9670a2909190b3_BB5f903e496691755 -> Nodebe9670a2909190b3_BB78769979a9437f38;
+        Nodebe9670a2909190b3_BB894a65b14e8a5695 [label="bb10"];
+        Nodebe9670a2909190b3_BBc082569aea69b08b -> Nodebe9670a2909190b3_BB894a65b14e8a5695;
+        Nodebe9670a2909190b3_BB3d4de5858633f5ba [label="bb11"];
+        Nodebe9670a2909190b3_BBc082569aea69b08b -> Nodebe9670a2909190b3_BB3d4de5858633f5ba;
+        Nodebe9670a2909190b3_BBd0b67a9e980ab09f [label="bb12"];
+        Nodebe9670a2909190b3_BB894a65b14e8a5695 -> Nodebe9670a2909190b3_BBd0b67a9e980ab09f;
+        Nodebe9670a2909190b3_BBd0b67a9e980ab09f [label="bb12"];
+        Nodebe9670a2909190b3_BB3d4de5858633f5ba -> Nodebe9670a2909190b3_BBd0b67a9e980ab09f;
+
+    }
+    subgraph Nodec5923ea54685362c {
+        style=filled;
+        color=lightgrey;
+        label="core::char::methods::<impl char>::encode_utf16";
+        rankdir=TB;
+        Nodec5923ea54685362c_BB31b63380a252cd62 [label="core::char::methods::<impl char>::encode_utf16"];
+        Nodec5923ea54685362c_BBa486304289c3ae15 [label="Return"];
+        Nodec5923ea54685362c_BB31b63380a252cd62 -> Nodec5923ea54685362c_BBa486304289c3ae15;
+
+    }
+    subgraph Node987f15efcef084ad {
+        style=filled;
+        color=lightgrey;
+        label="core::slice::<impl [T]>::get_mut";
+        rankdir=TB;
+        Node987f15efcef084ad_BB31b63380a252cd62 [label="core::slice::<impl [T]>::get_mut"];
+        Node987f15efcef084ad_BBa486304289c3ae15 [label="Return"];
+        Node987f15efcef084ad_BB31b63380a252cd62 -> Node987f15efcef084ad_BBa486304289c3ae15;
+
+    }
+    subgraph Nodebd5a9a337b3438c1 {
+        style=filled;
+        color=lightgrey;
+        label="core::slice::raw::from_raw_parts_mut";
+        rankdir=TB;
+        Nodebd5a9a337b3438c1_BB31b63380a252cd62 [label="core::slice::raw::from_raw_parts_mut"];
+        Nodebd5a9a337b3438c1_BBa486304289c3ae15 [label="Return"];
+        Nodebd5a9a337b3438c1_BB31b63380a252cd62 -> Nodebd5a9a337b3438c1_BBa486304289c3ae15;
+
+    }
+    subgraph Node2ddf2d75aba4ade4 {
+        style=filled;
+        color=lightgrey;
+        label="core::convert::num::ptr_try_from_impls::<impl core::convert::TryFrom<i32> for usize>::try_from";
+        rankdir=TB;
+        Node2ddf2d75aba4ade4_BB31b63380a252cd62 [label="core::convert::num::ptr_try_from_impls::<impl core::convert::TryFrom<i32> for usize>::try_from"];
+        Node2ddf2d75aba4ade4_BB1db1feea5e86a057 [label="bb1"];
+        Node2ddf2d75aba4ade4_BB31b63380a252cd62 -> Node2ddf2d75aba4ade4_BB1db1feea5e86a057;
+        Node2ddf2d75aba4ade4_BBadb51a2637edcca4 [label="bb2"];
+        Node2ddf2d75aba4ade4_BB31b63380a252cd62 -> Node2ddf2d75aba4ade4_BBadb51a2637edcca4;
+        Node2ddf2d75aba4ade4_BBd40ffbe880b44889 [label="bb3"];
+        Node2ddf2d75aba4ade4_BB1db1feea5e86a057 -> Node2ddf2d75aba4ade4_BBd40ffbe880b44889;
+        Node2ddf2d75aba4ade4_BBd40ffbe880b44889 [label="bb3"];
+        Node2ddf2d75aba4ade4_BBadb51a2637edcca4 -> Node2ddf2d75aba4ade4_BBd40ffbe880b44889;
+        Node2ddf2d75aba4ade4_BBa486304289c3ae15 [label="Return"];
+        Node2ddf2d75aba4ade4_BBd40ffbe880b44889 -> Node2ddf2d75aba4ade4_BBa486304289c3ae15;
+
+    }
+    subgraph Noded6bfdb7dcd04ef75 {
+        style=filled;
+        color=lightgrey;
+        label="core::convert::num::ptr_try_from_impls::<impl core::convert::TryFrom<usize> for i32>::try_from";
+        rankdir=TB;
+        Noded6bfdb7dcd04ef75_BB31b63380a252cd62 [label="core::convert::num::ptr_try_from_impls::<impl core::convert::TryFrom<usize> for i32>::try_from"];
+        Noded6bfdb7dcd04ef75_BB1db1feea5e86a057 [label="bb1"];
+        Noded6bfdb7dcd04ef75_BB31b63380a252cd62 -> Noded6bfdb7dcd04ef75_BB1db1feea5e86a057;
+        Noded6bfdb7dcd04ef75_BBadb51a2637edcca4 [label="bb2"];
+        Noded6bfdb7dcd04ef75_BB31b63380a252cd62 -> Noded6bfdb7dcd04ef75_BBadb51a2637edcca4;
+        Noded6bfdb7dcd04ef75_BBd40ffbe880b44889 [label="bb3"];
+        Noded6bfdb7dcd04ef75_BB1db1feea5e86a057 -> Noded6bfdb7dcd04ef75_BBd40ffbe880b44889;
+        Noded6bfdb7dcd04ef75_BBd40ffbe880b44889 [label="bb3"];
+        Noded6bfdb7dcd04ef75_BBadb51a2637edcca4 -> Noded6bfdb7dcd04ef75_BBd40ffbe880b44889;
+        Noded6bfdb7dcd04ef75_BBa486304289c3ae15 [label="Return"];
+        Noded6bfdb7dcd04ef75_BBd40ffbe880b44889 -> Noded6bfdb7dcd04ef75_BBa486304289c3ae15;
+
+    }
+    subgraph Nodead1dee9d529f6a72 {
+        style=filled;
+        color=lightgrey;
+        label="core::convert::num::<impl core::convert::TryFrom<u32> for i32>::try_from";
+        rankdir=TB;
+        Nodead1dee9d529f6a72_BB31b63380a252cd62 [label="core::convert::num::<impl core::convert::TryFrom<u32> for i32>::try_from"];
+        Nodead1dee9d529f6a72_BB1db1feea5e86a057 [label="bb1"];
+        Nodead1dee9d529f6a72_BB31b63380a252cd62 -> Nodead1dee9d529f6a72_BB1db1feea5e86a057;
+        Nodead1dee9d529f6a72_BBadb51a2637edcca4 [label="bb2"];
+        Nodead1dee9d529f6a72_BB31b63380a252cd62 -> Nodead1dee9d529f6a72_BBadb51a2637edcca4;
+        Nodead1dee9d529f6a72_BBd40ffbe880b44889 [label="bb3"];
+        Nodead1dee9d529f6a72_BB1db1feea5e86a057 -> Nodead1dee9d529f6a72_BBd40ffbe880b44889;
+        Nodead1dee9d529f6a72_BBd40ffbe880b44889 [label="bb3"];
+        Nodead1dee9d529f6a72_BBadb51a2637edcca4 -> Nodead1dee9d529f6a72_BBd40ffbe880b44889;
+        Nodead1dee9d529f6a72_BBa486304289c3ae15 [label="Return"];
+        Nodead1dee9d529f6a72_BBd40ffbe880b44889 -> Nodead1dee9d529f6a72_BBa486304289c3ae15;
+
+    }
+    subgraph Node99862ef146eb3371 {
+        style=filled;
+        color=lightgrey;
+        label="<T as core::convert::TryInto<U>>::try_into";
+        rankdir=TB;
+        Node99862ef146eb3371_BB31b63380a252cd62 [label="<T as core::convert::TryInto<U>>::try_into"];
+        Node99862ef146eb3371_BBa486304289c3ae15 [label="Return"];
+        Node99862ef146eb3371_BB31b63380a252cd62 -> Node99862ef146eb3371_BBa486304289c3ae15;
+
+    }
+    subgraph Nodea1ade0bfcd45d429 {
+        style=filled;
+        color=lightgrey;
+        label="<T as core::convert::TryInto<U>>::try_into";
+        rankdir=TB;
+        Nodea1ade0bfcd45d429_BB31b63380a252cd62 [label="<T as core::convert::TryInto<U>>::try_into"];
+        Nodea1ade0bfcd45d429_BBa486304289c3ae15 [label="Return"];
+        Nodea1ade0bfcd45d429_BB31b63380a252cd62 -> Nodea1ade0bfcd45d429_BBa486304289c3ae15;
+
+    }
+    subgraph Nodefb68b386f4788951 {
+        style=filled;
+        color=lightgrey;
+        label="<T as core::convert::TryInto<U>>::try_into";
+        rankdir=TB;
+        Nodefb68b386f4788951_BB31b63380a252cd62 [label="<T as core::convert::TryInto<U>>::try_into"];
+        Nodefb68b386f4788951_BBa486304289c3ae15 [label="Return"];
+        Nodefb68b386f4788951_BB31b63380a252cd62 -> Nodefb68b386f4788951_BBa486304289c3ae15;
+
+    }
+    subgraph Node874fb37eeb2bff8b {
+        style=filled;
+        color=lightgrey;
+        label="alloc::vec::Vec<T,A>::len";
+        rankdir=TB;
+        Node874fb37eeb2bff8b_BB31b63380a252cd62 [label="alloc::vec::Vec<T,A>::len"];
+        Node874fb37eeb2bff8b_BBa486304289c3ae15 [label="Return"];
+        Node874fb37eeb2bff8b_BB31b63380a252cd62 -> Node874fb37eeb2bff8b_BBa486304289c3ae15;
+
+    }
+    subgraph Node15b39ea391df9e22 {
+        style=filled;
+        color=lightgrey;
+        label="alloc::vec::Vec<T,A>::as_ptr";
+        rankdir=TB;
+        Node15b39ea391df9e22_BB31b63380a252cd62 [label="alloc::vec::Vec<T,A>::as_ptr"];
+        Node15b39ea391df9e22_BBa486304289c3ae15 [label="Return"];
+        Node15b39ea391df9e22_BB31b63380a252cd62 -> Node15b39ea391df9e22_BBa486304289c3ae15;
+
+    }
+    subgraph Nodedc8e25e3dac445e9 {
+        style=filled;
+        color=lightgrey;
+        label="alloc::raw_vec::RawVec<T,A>::current_memory";
+        rankdir=TB;
+        Nodedc8e25e3dac445e9_BB31b63380a252cd62 [label="alloc::raw_vec::RawVec<T,A>::current_memory"];
+        Nodedc8e25e3dac445e9_BBadb51a2637edcca4 [label="bb2"];
+        Nodedc8e25e3dac445e9_BB31b63380a252cd62 -> Nodedc8e25e3dac445e9_BBadb51a2637edcca4;
+        Nodedc8e25e3dac445e9_BB1db1feea5e86a057 [label="bb1"];
+        Nodedc8e25e3dac445e9_BB31b63380a252cd62 -> Nodedc8e25e3dac445e9_BB1db1feea5e86a057;
+        Nodedc8e25e3dac445e9_BB693ac12414dd0aca [label="bb4"];
+        Nodedc8e25e3dac445e9_BBadb51a2637edcca4 -> Nodedc8e25e3dac445e9_BB693ac12414dd0aca;
+        Nodedc8e25e3dac445e9_BBadb51a2637edcca4 [label="bb2"];
+        Nodedc8e25e3dac445e9_BB1db1feea5e86a057 -> Nodedc8e25e3dac445e9_BBadb51a2637edcca4;
+        Nodedc8e25e3dac445e9_BBd40ffbe880b44889 [label="bb3"];
+        Nodedc8e25e3dac445e9_BB1db1feea5e86a057 -> Nodedc8e25e3dac445e9_BBd40ffbe880b44889;
+        Nodedc8e25e3dac445e9_BBa486304289c3ae15 [label="Return"];
+        Nodedc8e25e3dac445e9_BB693ac12414dd0aca -> Nodedc8e25e3dac445e9_BBa486304289c3ae15;
+        Nodedc8e25e3dac445e9_BB693ac12414dd0aca [label="bb4"];
+        Nodedc8e25e3dac445e9_BBd40ffbe880b44889 -> Nodedc8e25e3dac445e9_BB693ac12414dd0aca;
+
+    }
+    subgraph Node6409c258e5872d1f {
+        style=filled;
+        color=lightgrey;
+        label="<alloc::alloc::Global as core::alloc::Allocator>::deallocate";
+        rankdir=TB;
+        Node6409c258e5872d1f_BB31b63380a252cd62 [label="<alloc::alloc::Global as core::alloc::Allocator>::deallocate"];
+        Node6409c258e5872d1f_BBadb51a2637edcca4 [label="bb2"];
+        Node6409c258e5872d1f_BB31b63380a252cd62 -> Node6409c258e5872d1f_BBadb51a2637edcca4;
+        Node6409c258e5872d1f_BB1db1feea5e86a057 [label="bb1"];
+        Node6409c258e5872d1f_BB31b63380a252cd62 -> Node6409c258e5872d1f_BB1db1feea5e86a057;
+        Node6409c258e5872d1f_BBd40ffbe880b44889 [label="bb3"];
+        Node6409c258e5872d1f_BBadb51a2637edcca4 -> Node6409c258e5872d1f_BBd40ffbe880b44889;
+        Node6409c258e5872d1f_BBd40ffbe880b44889 [label="bb3"];
+        Node6409c258e5872d1f_BB1db1feea5e86a057 -> Node6409c258e5872d1f_BBd40ffbe880b44889;
+        Node6409c258e5872d1f_BBa486304289c3ae15 [label="Return"];
+        Node6409c258e5872d1f_BBd40ffbe880b44889 -> Node6409c258e5872d1f_BBa486304289c3ae15;
+
+    }
+    subgraph Node3a57e5acbafb1d7d {
+        style=filled;
+        color=lightgrey;
+        label="<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop";
+        rankdir=TB;
+        Node3a57e5acbafb1d7d_BB31b63380a252cd62 [label="<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop"];
+        Node3a57e5acbafb1d7d_BBa486304289c3ae15 [label="Return"];
+        Node3a57e5acbafb1d7d_BB31b63380a252cd62 -> Node3a57e5acbafb1d7d_BBa486304289c3ae15;
+
+    }
+    subgraph Nodebbc2e4a1f42a5ebb {
+        style=filled;
+        color=lightgrey;
+        label="<core::num::error::TryFromIntError as core::fmt::Debug>::fmt";
+        rankdir=TB;
+        Nodebbc2e4a1f42a5ebb_BB31b63380a252cd62 [label="<core::num::error::TryFromIntError as core::fmt::Debug>::fmt"];
+        Nodebbc2e4a1f42a5ebb_BBa486304289c3ae15 [label="Return"];
+        Nodebbc2e4a1f42a5ebb_BB31b63380a252cd62 -> Nodebbc2e4a1f42a5ebb_BBa486304289c3ae15;
+
+    }
+    subgraph Node9dd50810256c498c {
+        style=filled;
+        color=lightgrey;
+        label="<[A] as core::slice::cmp::SlicePartialEq<B>>::equal";
+        rankdir=TB;
+        Node9dd50810256c498c_BB31b63380a252cd62 [label="<[A] as core::slice::cmp::SlicePartialEq<B>>::equal"];
+        Node9dd50810256c498c_BB1db1feea5e86a057 [label="bb1"];
+        Node9dd50810256c498c_BB31b63380a252cd62 -> Node9dd50810256c498c_BB1db1feea5e86a057;
+        Node9dd50810256c498c_BBadb51a2637edcca4 [label="bb2"];
+        Node9dd50810256c498c_BB31b63380a252cd62 -> Node9dd50810256c498c_BBadb51a2637edcca4;
+        Node9dd50810256c498c_BB693ac12414dd0aca [label="bb4"];
+        Node9dd50810256c498c_BB1db1feea5e86a057 -> Node9dd50810256c498c_BB693ac12414dd0aca;
+        Node9dd50810256c498c_BB693ac12414dd0aca [label="bb4"];
+        Node9dd50810256c498c_BBadb51a2637edcca4 -> Node9dd50810256c498c_BB693ac12414dd0aca;
+        Node9dd50810256c498c_BBa486304289c3ae15 [label="Return"];
+        Node9dd50810256c498c_BB693ac12414dd0aca -> Node9dd50810256c498c_BBa486304289c3ae15;
+
+    }
+    subgraph Node1e1fad3c8bb01e87 {
+        style=filled;
+        color=lightgrey;
+        label="<usize as core::slice::index::SliceIndex<[T]>>::get_mut";
+        rankdir=TB;
+        Node1e1fad3c8bb01e87_BB31b63380a252cd62 [label="<usize as core::slice::index::SliceIndex<[T]>>::get_mut"];
+        Node1e1fad3c8bb01e87_BB1db1feea5e86a057 [label="bb1"];
+        Node1e1fad3c8bb01e87_BB31b63380a252cd62 -> Node1e1fad3c8bb01e87_BB1db1feea5e86a057;
+        Node1e1fad3c8bb01e87_BBadb51a2637edcca4 [label="bb2"];
+        Node1e1fad3c8bb01e87_BB31b63380a252cd62 -> Node1e1fad3c8bb01e87_BBadb51a2637edcca4;
+        Node1e1fad3c8bb01e87_BBd40ffbe880b44889 [label="bb3"];
+        Node1e1fad3c8bb01e87_BB1db1feea5e86a057 -> Node1e1fad3c8bb01e87_BBd40ffbe880b44889;
+        Node1e1fad3c8bb01e87_BBd40ffbe880b44889 [label="bb3"];
+        Node1e1fad3c8bb01e87_BBadb51a2637edcca4 -> Node1e1fad3c8bb01e87_BBd40ffbe880b44889;
+        Node1e1fad3c8bb01e87_BBa486304289c3ae15 [label="Return"];
+        Node1e1fad3c8bb01e87_BBd40ffbe880b44889 -> Node1e1fad3c8bb01e87_BBa486304289c3ae15;
+
+    }
+    subgraph Node6db93ba0b1246a95 {
+        style=filled;
+        color=lightgrey;
+        label="<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop";
+        rankdir=TB;
+        Node6db93ba0b1246a95_BB31b63380a252cd62 [label="<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop"];
+        Node6db93ba0b1246a95_BBadb51a2637edcca4 [label="bb2"];
+        Node6db93ba0b1246a95_BB31b63380a252cd62 -> Node6db93ba0b1246a95_BBadb51a2637edcca4;
+        Node6db93ba0b1246a95_BB693ac12414dd0aca [label="bb4"];
+        Node6db93ba0b1246a95_BB31b63380a252cd62 -> Node6db93ba0b1246a95_BB693ac12414dd0aca;
+        Node6db93ba0b1246a95_BB693ac12414dd0aca [label="bb4"];
+        Node6db93ba0b1246a95_BBadb51a2637edcca4 -> Node6db93ba0b1246a95_BB693ac12414dd0aca;
+        Node6db93ba0b1246a95_BBa486304289c3ae15 [label="Return"];
+        Node6db93ba0b1246a95_BB693ac12414dd0aca -> Node6db93ba0b1246a95_BBa486304289c3ae15;
+
+    }
+    subgraph Nodeadf1d31bf48c21a2 {
+        style=filled;
+        color=lightgrey;
+        label="<core::result::Result<T,E> as core::ops::try_trait::Try>::branch";
+        rankdir=TB;
+        Nodeadf1d31bf48c21a2_BB31b63380a252cd62 [label="<core::result::Result<T,E> as core::ops::try_trait::Try>::branch"];
+        Nodeadf1d31bf48c21a2_BBd40ffbe880b44889 [label="bb3"];
+        Nodeadf1d31bf48c21a2_BB31b63380a252cd62 -> Nodeadf1d31bf48c21a2_BBd40ffbe880b44889;
+        Nodeadf1d31bf48c21a2_BB1db1feea5e86a057 [label="bb1"];
+        Nodeadf1d31bf48c21a2_BB31b63380a252cd62 -> Nodeadf1d31bf48c21a2_BB1db1feea5e86a057;
+        Nodeadf1d31bf48c21a2_BB693ac12414dd0aca [label="bb4"];
+        Nodeadf1d31bf48c21a2_BBd40ffbe880b44889 -> Nodeadf1d31bf48c21a2_BB693ac12414dd0aca;
+        Nodeadf1d31bf48c21a2_BB693ac12414dd0aca [label="bb4"];
+        Nodeadf1d31bf48c21a2_BB1db1feea5e86a057 -> Nodeadf1d31bf48c21a2_BB693ac12414dd0aca;
+        Nodeadf1d31bf48c21a2_BBa486304289c3ae15 [label="Return"];
+        Nodeadf1d31bf48c21a2_BB693ac12414dd0aca -> Nodeadf1d31bf48c21a2_BBa486304289c3ae15;
+
+    }
+    subgraph Node8621e19c02b48f59 {
+        style=filled;
+        color=lightgrey;
+        label="<core::result::Result<T,E> as core::ops::try_trait::Try>::branch";
+        rankdir=TB;
+        Node8621e19c02b48f59_BB31b63380a252cd62 [label="<core::result::Result<T,E> as core::ops::try_trait::Try>::branch"];
+        Node8621e19c02b48f59_BBd40ffbe880b44889 [label="bb3"];
+        Node8621e19c02b48f59_BB31b63380a252cd62 -> Node8621e19c02b48f59_BBd40ffbe880b44889;
+        Node8621e19c02b48f59_BB1db1feea5e86a057 [label="bb1"];
+        Node8621e19c02b48f59_BB31b63380a252cd62 -> Node8621e19c02b48f59_BB1db1feea5e86a057;
+        Node8621e19c02b48f59_BB693ac12414dd0aca [label="bb4"];
+        Node8621e19c02b48f59_BBd40ffbe880b44889 -> Node8621e19c02b48f59_BB693ac12414dd0aca;
+        Node8621e19c02b48f59_BB693ac12414dd0aca [label="bb4"];
+        Node8621e19c02b48f59_BB1db1feea5e86a057 -> Node8621e19c02b48f59_BB693ac12414dd0aca;
+        Node8621e19c02b48f59_BBa486304289c3ae15 [label="Return"];
+        Node8621e19c02b48f59_BB693ac12414dd0aca -> Node8621e19c02b48f59_BBa486304289c3ae15;
+
+    }
+    subgraph Node6920f9f93e087926 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::glyph::Glyph::from_raw";
+        rankdir=TB;
+        Node6920f9f93e087926_BB31b63380a252cd62 [label="ttf2mesh::glyph::Glyph::from_raw"];
+        Node6920f9f93e087926_BBa486304289c3ae15 [label="Return"];
+        Node6920f9f93e087926_BB31b63380a252cd62 -> Node6920f9f93e087926_BBa486304289c3ae15;
+
+    }
+    subgraph Node8e8cdefbb4e0e0a3 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::glyph::Glyph::to_2d_mesh";
+        rankdir=TB;
+        Node8e8cdefbb4e0e0a3_BB31b63380a252cd62 [label="ttf2mesh::glyph::Glyph::to_2d_mesh"];
+        Node8e8cdefbb4e0e0a3_BBeac1dc9bb8b7859c [label="core::result::Result<T,E>::unwrap.exit", color=red];
+        Node8e8cdefbb4e0e0a3_BB31b63380a252cd62 -> Node8e8cdefbb4e0e0a3_BBeac1dc9bb8b7859c;
+        Node8e8cdefbb4e0e0a3_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node8e8cdefbb4e0e0a3_BB31b63380a252cd62 -> Node8e8cdefbb4e0e0a3_BB11fc71cd1c2e3da4;
+        Node8e8cdefbb4e0e0a3_BBc082569aea69b08b [label="bb7"];
+        Node8e8cdefbb4e0e0a3_BBeac1dc9bb8b7859c -> Node8e8cdefbb4e0e0a3_BBc082569aea69b08b;
+        Node8e8cdefbb4e0e0a3_BB81ac2b2651883822 [label="bb8"];
+        Node8e8cdefbb4e0e0a3_BBeac1dc9bb8b7859c -> Node8e8cdefbb4e0e0a3_BB81ac2b2651883822;
+        Node8e8cdefbb4e0e0a3_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node8e8cdefbb4e0e0a3_BB11fc71cd1c2e3da4 -> Node8e8cdefbb4e0e0a3_BB9e9a909de5a3635b;
+        Node8e8cdefbb4e0e0a3_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node8e8cdefbb4e0e0a3_BB11fc71cd1c2e3da4 -> Node8e8cdefbb4e0e0a3_BB688d59a55cb45c57;
+        Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e [label="bb14"];
+        Node8e8cdefbb4e0e0a3_BBc082569aea69b08b -> Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e;
+        Node8e8cdefbb4e0e0a3_BBd0b67a9e980ab09f [label="bb12"];
+        Node8e8cdefbb4e0e0a3_BB81ac2b2651883822 -> Node8e8cdefbb4e0e0a3_BBd0b67a9e980ab09f;
+        Node8e8cdefbb4e0e0a3_BB77b645a33253cbf3 [label="bb13"];
+        Node8e8cdefbb4e0e0a3_BB81ac2b2651883822 -> Node8e8cdefbb4e0e0a3_BB77b645a33253cbf3;
+        Node8e8cdefbb4e0e0a3_BBa486304289c3ae15 [label="Return"];
+        Node8e8cdefbb4e0e0a3_BB688d59a55cb45c57 -> Node8e8cdefbb4e0e0a3_BBa486304289c3ae15;
+        Node8e8cdefbb4e0e0a3_BBa486304289c3ae15 [label="Return"];
+        Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e -> Node8e8cdefbb4e0e0a3_BBa486304289c3ae15;
+        Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e [label="bb14"];
+        Node8e8cdefbb4e0e0a3_BBd0b67a9e980ab09f -> Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e;
+        Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e [label="bb14"];
+        Node8e8cdefbb4e0e0a3_BB77b645a33253cbf3 -> Node8e8cdefbb4e0e0a3_BB3495641ddcd8869e;
+
+    }
+    subgraph Node6d0c6ef8f89ce0d5 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::glyph::Glyph::to_3d_mesh";
+        rankdir=TB;
+        Node6d0c6ef8f89ce0d5_BB31b63380a252cd62 [label="ttf2mesh::glyph::Glyph::to_3d_mesh"];
+        Node6d0c6ef8f89ce0d5_BBeac1dc9bb8b7859c [label="core::result::Result<T,E>::unwrap.exit", color=red];
+        Node6d0c6ef8f89ce0d5_BB31b63380a252cd62 -> Node6d0c6ef8f89ce0d5_BBeac1dc9bb8b7859c;
+        Node6d0c6ef8f89ce0d5_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node6d0c6ef8f89ce0d5_BB31b63380a252cd62 -> Node6d0c6ef8f89ce0d5_BB11fc71cd1c2e3da4;
+        Node6d0c6ef8f89ce0d5_BBc082569aea69b08b [label="bb7"];
+        Node6d0c6ef8f89ce0d5_BBeac1dc9bb8b7859c -> Node6d0c6ef8f89ce0d5_BBc082569aea69b08b;
+        Node6d0c6ef8f89ce0d5_BB81ac2b2651883822 [label="bb8"];
+        Node6d0c6ef8f89ce0d5_BBeac1dc9bb8b7859c -> Node6d0c6ef8f89ce0d5_BB81ac2b2651883822;
+        Node6d0c6ef8f89ce0d5_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node6d0c6ef8f89ce0d5_BB11fc71cd1c2e3da4 -> Node6d0c6ef8f89ce0d5_BB9e9a909de5a3635b;
+        Node6d0c6ef8f89ce0d5_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node6d0c6ef8f89ce0d5_BB11fc71cd1c2e3da4 -> Node6d0c6ef8f89ce0d5_BB688d59a55cb45c57;
+        Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e [label="bb14"];
+        Node6d0c6ef8f89ce0d5_BBc082569aea69b08b -> Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e;
+        Node6d0c6ef8f89ce0d5_BBd0b67a9e980ab09f [label="bb12"];
+        Node6d0c6ef8f89ce0d5_BB81ac2b2651883822 -> Node6d0c6ef8f89ce0d5_BBd0b67a9e980ab09f;
+        Node6d0c6ef8f89ce0d5_BB77b645a33253cbf3 [label="bb13"];
+        Node6d0c6ef8f89ce0d5_BB81ac2b2651883822 -> Node6d0c6ef8f89ce0d5_BB77b645a33253cbf3;
+        Node6d0c6ef8f89ce0d5_BBa486304289c3ae15 [label="Return"];
+        Node6d0c6ef8f89ce0d5_BB688d59a55cb45c57 -> Node6d0c6ef8f89ce0d5_BBa486304289c3ae15;
+        Node6d0c6ef8f89ce0d5_BBa486304289c3ae15 [label="Return"];
+        Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e -> Node6d0c6ef8f89ce0d5_BBa486304289c3ae15;
+        Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e [label="bb14"];
+        Node6d0c6ef8f89ce0d5_BBd0b67a9e980ab09f -> Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e;
+        Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e [label="bb14"];
+        Node6d0c6ef8f89ce0d5_BB77b645a33253cbf3 -> Node6d0c6ef8f89ce0d5_BB3495641ddcd8869e;
+
+    }
+    subgraph Node29132e090a1766bf {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::vert_ptr";
+        rankdir=TB;
+        Node29132e090a1766bf_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::vert_ptr"];
+        Node29132e090a1766bf_BBa486304289c3ae15 [label="Return"];
+        Node29132e090a1766bf_BB31b63380a252cd62 -> Node29132e090a1766bf_BBa486304289c3ae15;
+
+    }
+    subgraph Nodec46e4dc30e40d0c3 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::vertices_len";
+        rankdir=TB;
+        Nodec46e4dc30e40d0c3_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::vertices_len"];
+        Nodec46e4dc30e40d0c3_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Nodec46e4dc30e40d0c3_BB31b63380a252cd62 -> Nodec46e4dc30e40d0c3_BB8b2c005df3a2621e;
+        Nodec46e4dc30e40d0c3_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Nodec46e4dc30e40d0c3_BB31b63380a252cd62 -> Nodec46e4dc30e40d0c3_BB11fc71cd1c2e3da4;
+        Nodec46e4dc30e40d0c3_BBa486304289c3ae15 [label="Return"];
+        Nodec46e4dc30e40d0c3_BB8b2c005df3a2621e -> Nodec46e4dc30e40d0c3_BBa486304289c3ae15;
+        Nodec46e4dc30e40d0c3_BB9e9a909de5a3635b [label="unreachable.i"];
+        Nodec46e4dc30e40d0c3_BB11fc71cd1c2e3da4 -> Nodec46e4dc30e40d0c3_BB9e9a909de5a3635b;
+        Nodec46e4dc30e40d0c3_BB688d59a55cb45c57 [label="cleanup.i"];
+        Nodec46e4dc30e40d0c3_BB11fc71cd1c2e3da4 -> Nodec46e4dc30e40d0c3_BB688d59a55cb45c57;
+        Nodec46e4dc30e40d0c3_BBa486304289c3ae15 [label="Return"];
+        Nodec46e4dc30e40d0c3_BB688d59a55cb45c57 -> Nodec46e4dc30e40d0c3_BBa486304289c3ae15;
+
+    }
+    subgraph Node12c85d01a7aa20d {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::face_ptr";
+        rankdir=TB;
+        Node12c85d01a7aa20d_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::face_ptr"];
+        Node12c85d01a7aa20d_BBa486304289c3ae15 [label="Return"];
+        Node12c85d01a7aa20d_BB31b63380a252cd62 -> Node12c85d01a7aa20d_BBa486304289c3ae15;
+
+    }
+    subgraph Nodef16426e71b49ed13 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::faces_len";
+        rankdir=TB;
+        Nodef16426e71b49ed13_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::faces_len"];
+        Nodef16426e71b49ed13_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Nodef16426e71b49ed13_BB31b63380a252cd62 -> Nodef16426e71b49ed13_BB8b2c005df3a2621e;
+        Nodef16426e71b49ed13_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Nodef16426e71b49ed13_BB31b63380a252cd62 -> Nodef16426e71b49ed13_BB11fc71cd1c2e3da4;
+        Nodef16426e71b49ed13_BBa486304289c3ae15 [label="Return"];
+        Nodef16426e71b49ed13_BB8b2c005df3a2621e -> Nodef16426e71b49ed13_BBa486304289c3ae15;
+        Nodef16426e71b49ed13_BB9e9a909de5a3635b [label="unreachable.i"];
+        Nodef16426e71b49ed13_BB11fc71cd1c2e3da4 -> Nodef16426e71b49ed13_BB9e9a909de5a3635b;
+        Nodef16426e71b49ed13_BB688d59a55cb45c57 [label="cleanup.i"];
+        Nodef16426e71b49ed13_BB11fc71cd1c2e3da4 -> Nodef16426e71b49ed13_BB688d59a55cb45c57;
+        Nodef16426e71b49ed13_BBa486304289c3ae15 [label="Return"];
+        Nodef16426e71b49ed13_BB688d59a55cb45c57 -> Nodef16426e71b49ed13_BBa486304289c3ae15;
+
+    }
+    subgraph Node6784d579cde3cf87 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::normals_ptr";
+        rankdir=TB;
+        Node6784d579cde3cf87_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::normals_ptr"];
+        Node6784d579cde3cf87_BBa486304289c3ae15 [label="Return"];
+        Node6784d579cde3cf87_BB31b63380a252cd62 -> Node6784d579cde3cf87_BBa486304289c3ae15;
+
+    }
+    subgraph Node3e67903f4c34c62e {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::normals_len";
+        rankdir=TB;
+        Node3e67903f4c34c62e_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::normals_len"];
+        Node3e67903f4c34c62e_BBa486304289c3ae15 [label="Return"];
+        Node3e67903f4c34c62e_BB31b63380a252cd62 -> Node3e67903f4c34c62e_BBa486304289c3ae15;
+
+    }
+    subgraph Node5cc46da34e3f1109 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::free";
+        rankdir=TB;
+        Node5cc46da34e3f1109_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::free", color=red];
+        Node5cc46da34e3f1109_BBa486304289c3ae15 [label="Return"];
+        Node5cc46da34e3f1109_BB31b63380a252cd62 -> Node5cc46da34e3f1109_BBa486304289c3ae15;
+
+    }
+    subgraph Nodeaacf307870c3787e {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::vert_ptr";
+        rankdir=TB;
+        Nodeaacf307870c3787e_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::vert_ptr"];
+        Nodeaacf307870c3787e_BBa486304289c3ae15 [label="Return"];
+        Nodeaacf307870c3787e_BB31b63380a252cd62 -> Nodeaacf307870c3787e_BBa486304289c3ae15;
+
+    }
+    subgraph Node609c55dfc61288f5 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::vertices_len";
+        rankdir=TB;
+        Node609c55dfc61288f5_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::vertices_len"];
+        Node609c55dfc61288f5_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Node609c55dfc61288f5_BB31b63380a252cd62 -> Node609c55dfc61288f5_BB8b2c005df3a2621e;
+        Node609c55dfc61288f5_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node609c55dfc61288f5_BB31b63380a252cd62 -> Node609c55dfc61288f5_BB11fc71cd1c2e3da4;
+        Node609c55dfc61288f5_BBa486304289c3ae15 [label="Return"];
+        Node609c55dfc61288f5_BB8b2c005df3a2621e -> Node609c55dfc61288f5_BBa486304289c3ae15;
+        Node609c55dfc61288f5_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node609c55dfc61288f5_BB11fc71cd1c2e3da4 -> Node609c55dfc61288f5_BB9e9a909de5a3635b;
+        Node609c55dfc61288f5_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node609c55dfc61288f5_BB11fc71cd1c2e3da4 -> Node609c55dfc61288f5_BB688d59a55cb45c57;
+        Node609c55dfc61288f5_BBa486304289c3ae15 [label="Return"];
+        Node609c55dfc61288f5_BB688d59a55cb45c57 -> Node609c55dfc61288f5_BBa486304289c3ae15;
+
+    }
+    subgraph Node9ca0e86fc007317a {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::face_ptr";
+        rankdir=TB;
+        Node9ca0e86fc007317a_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::face_ptr"];
+        Node9ca0e86fc007317a_BBa486304289c3ae15 [label="Return"];
+        Node9ca0e86fc007317a_BB31b63380a252cd62 -> Node9ca0e86fc007317a_BBa486304289c3ae15;
+
+    }
+    subgraph Node4a23093f2f8303f5 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::faces_len";
+        rankdir=TB;
+        Node4a23093f2f8303f5_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::faces_len"];
+        Node4a23093f2f8303f5_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Node4a23093f2f8303f5_BB31b63380a252cd62 -> Node4a23093f2f8303f5_BB8b2c005df3a2621e;
+        Node4a23093f2f8303f5_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node4a23093f2f8303f5_BB31b63380a252cd62 -> Node4a23093f2f8303f5_BB11fc71cd1c2e3da4;
+        Node4a23093f2f8303f5_BBa486304289c3ae15 [label="Return"];
+        Node4a23093f2f8303f5_BB8b2c005df3a2621e -> Node4a23093f2f8303f5_BBa486304289c3ae15;
+        Node4a23093f2f8303f5_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node4a23093f2f8303f5_BB11fc71cd1c2e3da4 -> Node4a23093f2f8303f5_BB9e9a909de5a3635b;
+        Node4a23093f2f8303f5_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node4a23093f2f8303f5_BB11fc71cd1c2e3da4 -> Node4a23093f2f8303f5_BB688d59a55cb45c57;
+        Node4a23093f2f8303f5_BBa486304289c3ae15 [label="Return"];
+        Node4a23093f2f8303f5_BB688d59a55cb45c57 -> Node4a23093f2f8303f5_BBa486304289c3ae15;
+
+    }
+    subgraph Node25e9a914809d7ffe {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::normals_ptr";
+        rankdir=TB;
+        Node25e9a914809d7ffe_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::normals_ptr"];
+        Node25e9a914809d7ffe_BBa486304289c3ae15 [label="Return"];
+        Node25e9a914809d7ffe_BB31b63380a252cd62 -> Node25e9a914809d7ffe_BBa486304289c3ae15;
+
+    }
+    subgraph Node4d23ff56200a0a7a {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::normals_len";
+        rankdir=TB;
+        Node4d23ff56200a0a7a_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::normals_len"];
+        Node4d23ff56200a0a7a_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Node4d23ff56200a0a7a_BB31b63380a252cd62 -> Node4d23ff56200a0a7a_BB8b2c005df3a2621e;
+        Node4d23ff56200a0a7a_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node4d23ff56200a0a7a_BB31b63380a252cd62 -> Node4d23ff56200a0a7a_BB11fc71cd1c2e3da4;
+        Node4d23ff56200a0a7a_BBa486304289c3ae15 [label="Return"];
+        Node4d23ff56200a0a7a_BB8b2c005df3a2621e -> Node4d23ff56200a0a7a_BBa486304289c3ae15;
+        Node4d23ff56200a0a7a_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node4d23ff56200a0a7a_BB11fc71cd1c2e3da4 -> Node4d23ff56200a0a7a_BB9e9a909de5a3635b;
+        Node4d23ff56200a0a7a_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node4d23ff56200a0a7a_BB11fc71cd1c2e3da4 -> Node4d23ff56200a0a7a_BB688d59a55cb45c57;
+        Node4d23ff56200a0a7a_BBa486304289c3ae15 [label="Return"];
+        Node4d23ff56200a0a7a_BB688d59a55cb45c57 -> Node4d23ff56200a0a7a_BBa486304289c3ae15;
+
+    }
+    subgraph Nodef31b9b722d0887 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::free";
+        rankdir=TB;
+        Nodef31b9b722d0887_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::free", color=red];
+        Nodef31b9b722d0887_BBa486304289c3ae15 [label="Return"];
+        Nodef31b9b722d0887_BB31b63380a252cd62 -> Nodef31b9b722d0887_BBa486304289c3ae15;
+
+    }
+    subgraph Nodefb2a66bc6fb59357 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::mesh::Mesh<T>::from_raw";
+        rankdir=TB;
+        Nodefb2a66bc6fb59357_BB31b63380a252cd62 [label="ttf2mesh::mesh::Mesh<T>::from_raw"];
+        Nodefb2a66bc6fb59357_BBa486304289c3ae15 [label="Return"];
+        Nodefb2a66bc6fb59357_BB31b63380a252cd62 -> Nodefb2a66bc6fb59357_BBa486304289c3ae15;
+
+    }
+    subgraph Nodef8f8379b91c5605f {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::mesh::Mesh<T>::from_raw";
+        rankdir=TB;
+        Nodef8f8379b91c5605f_BB31b63380a252cd62 [label="ttf2mesh::mesh::Mesh<T>::from_raw"];
+        Nodef8f8379b91c5605f_BBa486304289c3ae15 [label="Return"];
+        Nodef8f8379b91c5605f_BB31b63380a252cd62 -> Nodef8f8379b91c5605f_BBa486304289c3ae15;
+
+    }
+    subgraph Node4126bc1a8e81ec40 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh__bindgen_ty_1 as ttf2mesh::output::Value>::val";
+        rankdir=TB;
+        Node4126bc1a8e81ec40_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh__bindgen_ty_1 as ttf2mesh::output::Value>::val"];
+        Node4126bc1a8e81ec40_BBa486304289c3ae15 [label="Return"];
+        Node4126bc1a8e81ec40_BB31b63380a252cd62 -> Node4126bc1a8e81ec40_BBa486304289c3ae15;
+
+    }
+    subgraph Node6091ae6a322cf3e3 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh__bindgen_ty_2 as ttf2mesh::output::Value>::val";
+        rankdir=TB;
+        Node6091ae6a322cf3e3_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh__bindgen_ty_2 as ttf2mesh::output::Value>::val"];
+        Node6091ae6a322cf3e3_BBa486304289c3ae15 [label="Return"];
+        Node6091ae6a322cf3e3_BB31b63380a252cd62 -> Node6091ae6a322cf3e3_BBa486304289c3ae15;
+
+    }
+    subgraph Nodeaf13813e3ec1e0e8 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_1 as ttf2mesh::output::Value>::val";
+        rankdir=TB;
+        Nodeaf13813e3ec1e0e8_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_1 as ttf2mesh::output::Value>::val"];
+        Nodeaf13813e3ec1e0e8_BBa486304289c3ae15 [label="Return"];
+        Nodeaf13813e3ec1e0e8_BB31b63380a252cd62 -> Nodeaf13813e3ec1e0e8_BBa486304289c3ae15;
+
+    }
+    subgraph Node1429a374814b3015 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_2 as ttf2mesh::output::Value>::val";
+        rankdir=TB;
+        Node1429a374814b3015_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_2 as ttf2mesh::output::Value>::val"];
+        Node1429a374814b3015_BBa486304289c3ae15 [label="Return"];
+        Node1429a374814b3015_BB31b63380a252cd62 -> Node1429a374814b3015_BBa486304289c3ae15;
+
+    }
+    subgraph Node13aa0b1a1452e879 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_3 as ttf2mesh::output::Value>::val";
+        rankdir=TB;
+        Node13aa0b1a1452e879_BB31b63380a252cd62 [label="<ttf2mesh_sys::ttf_mesh3d__bindgen_ty_3 as ttf2mesh::output::Value>::val"];
+        Node13aa0b1a1452e879_BBa486304289c3ae15 [label="Return"];
+        Node13aa0b1a1452e879_BB31b63380a252cd62 -> Node13aa0b1a1452e879_BBa486304289c3ae15;
+
+    }
+    subgraph Node8ed590e93f2f9e7 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh::quality::Quality as core::default::Default>::default";
+        rankdir=TB;
+        Node8ed590e93f2f9e7_BB31b63380a252cd62 [label="<ttf2mesh::quality::Quality as core::default::Default>::default"];
+        Node8ed590e93f2f9e7_BBa486304289c3ae15 [label="Return"];
+        Node8ed590e93f2f9e7_BB31b63380a252cd62 -> Node8ed590e93f2f9e7_BBa486304289c3ae15;
+
+    }
+    subgraph Nodeaad3403e8d19b373 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::quality::Quality::from_str";
+        rankdir=TB;
+        Nodeaad3403e8d19b373_BB31b63380a252cd62 [label="ttf2mesh::quality::Quality::from_str"];
+        Nodeaad3403e8d19b373_BBd40ffbe880b44889 [label="bb3"];
+        Nodeaad3403e8d19b373_BB31b63380a252cd62 -> Nodeaad3403e8d19b373_BBd40ffbe880b44889;
+        Nodeaad3403e8d19b373_BBadb51a2637edcca4 [label="bb2"];
+        Nodeaad3403e8d19b373_BB31b63380a252cd62 -> Nodeaad3403e8d19b373_BBadb51a2637edcca4;
+        Nodeaad3403e8d19b373_BB3495641ddcd8869e [label="bb14"];
+        Nodeaad3403e8d19b373_BBd40ffbe880b44889 -> Nodeaad3403e8d19b373_BB3495641ddcd8869e;
+        Nodeaad3403e8d19b373_BBe9a6b1c8bc1f8520 [label="bb15"];
+        Nodeaad3403e8d19b373_BBd40ffbe880b44889 -> Nodeaad3403e8d19b373_BBe9a6b1c8bc1f8520;
+        Nodeaad3403e8d19b373_BB3ba2a985b362bcd9 [label="bb16"];
+        Nodeaad3403e8d19b373_BBd40ffbe880b44889 -> Nodeaad3403e8d19b373_BB3ba2a985b362bcd9;
+        Nodeaad3403e8d19b373_BBc52797660ad7ff6f [label="bb17"];
+        Nodeaad3403e8d19b373_BBd40ffbe880b44889 -> Nodeaad3403e8d19b373_BBc52797660ad7ff6f;
+        Nodeaad3403e8d19b373_BB693ac12414dd0aca [label="bb4"];
+        Nodeaad3403e8d19b373_BBadb51a2637edcca4 -> Nodeaad3403e8d19b373_BB693ac12414dd0aca;
+        Nodeaad3403e8d19b373_BB2086ba6d90fd48eb [label="bb5"];
+        Nodeaad3403e8d19b373_BBadb51a2637edcca4 -> Nodeaad3403e8d19b373_BB2086ba6d90fd48eb;
+        Nodeaad3403e8d19b373_BBad958b4780794021 [label="bb18"];
+        Nodeaad3403e8d19b373_BB3495641ddcd8869e -> Nodeaad3403e8d19b373_BBad958b4780794021;
+        Nodeaad3403e8d19b373_BBad958b4780794021 [label="bb18"];
+        Nodeaad3403e8d19b373_BBe9a6b1c8bc1f8520 -> Nodeaad3403e8d19b373_BBad958b4780794021;
+        Nodeaad3403e8d19b373_BBad958b4780794021 [label="bb18"];
+        Nodeaad3403e8d19b373_BB3ba2a985b362bcd9 -> Nodeaad3403e8d19b373_BBad958b4780794021;
+        Nodeaad3403e8d19b373_BBad958b4780794021 [label="bb18"];
+        Nodeaad3403e8d19b373_BBc52797660ad7ff6f -> Nodeaad3403e8d19b373_BBad958b4780794021;
+        Nodeaad3403e8d19b373_BB77b645a33253cbf3 [label="bb13"];
+        Nodeaad3403e8d19b373_BB693ac12414dd0aca -> Nodeaad3403e8d19b373_BB77b645a33253cbf3;
+        Nodeaad3403e8d19b373_BB5f903e496691755 [label="bb6"];
+        Nodeaad3403e8d19b373_BB2086ba6d90fd48eb -> Nodeaad3403e8d19b373_BB5f903e496691755;
+        Nodeaad3403e8d19b373_BBc082569aea69b08b [label="bb7"];
+        Nodeaad3403e8d19b373_BB2086ba6d90fd48eb -> Nodeaad3403e8d19b373_BBc082569aea69b08b;
+        Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9 [label="bb19"];
+        Nodeaad3403e8d19b373_BBad958b4780794021 -> Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9;
+        Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9 [label="bb19"];
+        Nodeaad3403e8d19b373_BB77b645a33253cbf3 -> Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9;
+        Nodeaad3403e8d19b373_BB77b645a33253cbf3 [label="bb13"];
+        Nodeaad3403e8d19b373_BB5f903e496691755 -> Nodeaad3403e8d19b373_BB77b645a33253cbf3;
+        Nodeaad3403e8d19b373_BB81ac2b2651883822 [label="bb8"];
+        Nodeaad3403e8d19b373_BBc082569aea69b08b -> Nodeaad3403e8d19b373_BB81ac2b2651883822;
+        Nodeaad3403e8d19b373_BB78769979a9437f38 [label="bb9"];
+        Nodeaad3403e8d19b373_BBc082569aea69b08b -> Nodeaad3403e8d19b373_BB78769979a9437f38;
+        Nodeaad3403e8d19b373_BBa486304289c3ae15 [label="Return"];
+        Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9 -> Nodeaad3403e8d19b373_BBa486304289c3ae15;
+        Nodeaad3403e8d19b373_BB77b645a33253cbf3 [label="bb13"];
+        Nodeaad3403e8d19b373_BB81ac2b2651883822 -> Nodeaad3403e8d19b373_BB77b645a33253cbf3;
+        Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9 [label="bb19"];
+        Nodeaad3403e8d19b373_BB78769979a9437f38 -> Nodeaad3403e8d19b373_BB9e920e9f1fb87ab9;
+
+    }
+    subgraph Node421b47670b84ae9d {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::quality::Quality::as_u8";
+        rankdir=TB;
+        Node421b47670b84ae9d_BB31b63380a252cd62 [label="ttf2mesh::quality::Quality::as_u8"];
+        Node421b47670b84ae9d_BB5f903e496691755 [label="bb6"];
+        Node421b47670b84ae9d_BB31b63380a252cd62 -> Node421b47670b84ae9d_BB5f903e496691755;
+        Node421b47670b84ae9d_BBadb51a2637edcca4 [label="bb2"];
+        Node421b47670b84ae9d_BB31b63380a252cd62 -> Node421b47670b84ae9d_BBadb51a2637edcca4;
+        Node421b47670b84ae9d_BBd40ffbe880b44889 [label="bb3"];
+        Node421b47670b84ae9d_BB31b63380a252cd62 -> Node421b47670b84ae9d_BBd40ffbe880b44889;
+        Node421b47670b84ae9d_BB693ac12414dd0aca [label="bb4"];
+        Node421b47670b84ae9d_BB31b63380a252cd62 -> Node421b47670b84ae9d_BB693ac12414dd0aca;
+        Node421b47670b84ae9d_BB1db1feea5e86a057 [label="bb1"];
+        Node421b47670b84ae9d_BB31b63380a252cd62 -> Node421b47670b84ae9d_BB1db1feea5e86a057;
+        Node421b47670b84ae9d_BB2086ba6d90fd48eb [label="bb5"];
+        Node421b47670b84ae9d_BBadb51a2637edcca4 -> Node421b47670b84ae9d_BB2086ba6d90fd48eb;
+        Node421b47670b84ae9d_BB2086ba6d90fd48eb [label="bb5"];
+        Node421b47670b84ae9d_BBd40ffbe880b44889 -> Node421b47670b84ae9d_BB2086ba6d90fd48eb;
+        Node421b47670b84ae9d_BB2086ba6d90fd48eb [label="bb5"];
+        Node421b47670b84ae9d_BB693ac12414dd0aca -> Node421b47670b84ae9d_BB2086ba6d90fd48eb;
+        Node421b47670b84ae9d_BB2086ba6d90fd48eb [label="bb5"];
+        Node421b47670b84ae9d_BB1db1feea5e86a057 -> Node421b47670b84ae9d_BB2086ba6d90fd48eb;
+        Node421b47670b84ae9d_BBa486304289c3ae15 [label="Return"];
+        Node421b47670b84ae9d_BB2086ba6d90fd48eb -> Node421b47670b84ae9d_BBa486304289c3ae15;
+
+    }
+    subgraph Node8ee194a8e2ca9712 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh::ttf::TTFFile as core::fmt::Debug>::fmt";
+        rankdir=TB;
+        Node8ee194a8e2ca9712_BB31b63380a252cd62 [label="<ttf2mesh::ttf::TTFFile as core::fmt::Debug>::fmt"];
+        Node8ee194a8e2ca9712_BBa486304289c3ae15 [label="Return"];
+        Node8ee194a8e2ca9712_BB31b63380a252cd62 -> Node8ee194a8e2ca9712_BBa486304289c3ae15;
+
+    }
+    subgraph Nodee6be083fa45cf7be {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::ttf::TTFFile::from_buffer_vec";
+        rankdir=TB;
+        Nodee6be083fa45cf7be_BB31b63380a252cd62 [label="ttf2mesh::ttf::TTFFile::from_buffer_vec"];
+        Nodee6be083fa45cf7be_BB1db1feea5e86a057 [label="bb1"];
+        Nodee6be083fa45cf7be_BB31b63380a252cd62 -> Nodee6be083fa45cf7be_BB1db1feea5e86a057;
+        Nodee6be083fa45cf7be_BBadb51a2637edcca4 [label="bb2"];
+        Nodee6be083fa45cf7be_BB1db1feea5e86a057 -> Nodee6be083fa45cf7be_BBadb51a2637edcca4;
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a [label="cleanup"];
+        Nodee6be083fa45cf7be_BB1db1feea5e86a057 -> Nodee6be083fa45cf7be_BB8813595e8fceb68a;
+        Nodee6be083fa45cf7be_BBd40ffbe880b44889 [label="bb3"];
+        Nodee6be083fa45cf7be_BBadb51a2637edcca4 -> Nodee6be083fa45cf7be_BBd40ffbe880b44889;
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a [label="cleanup"];
+        Nodee6be083fa45cf7be_BBadb51a2637edcca4 -> Nodee6be083fa45cf7be_BB8813595e8fceb68a;
+        Nodee6be083fa45cf7be_BB958be842402de34 [label="cleanup.body"];
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a -> Nodee6be083fa45cf7be_BB958be842402de34;
+        Nodee6be083fa45cf7be_BB693ac12414dd0aca [label="bb4"];
+        Nodee6be083fa45cf7be_BBd40ffbe880b44889 -> Nodee6be083fa45cf7be_BB693ac12414dd0aca;
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a [label="cleanup"];
+        Nodee6be083fa45cf7be_BBd40ffbe880b44889 -> Nodee6be083fa45cf7be_BB8813595e8fceb68a;
+        Nodee6be083fa45cf7be_BB894a65b14e8a5695 [label="bb10"];
+        Nodee6be083fa45cf7be_BB958be842402de34 -> Nodee6be083fa45cf7be_BB894a65b14e8a5695;
+        Nodee6be083fa45cf7be_BBeac1dc9bb8b7859c [label="core::result::Result<T,E>::unwrap.exit"];
+        Nodee6be083fa45cf7be_BB693ac12414dd0aca -> Nodee6be083fa45cf7be_BBeac1dc9bb8b7859c;
+        Nodee6be083fa45cf7be_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Nodee6be083fa45cf7be_BB693ac12414dd0aca -> Nodee6be083fa45cf7be_BB11fc71cd1c2e3da4;
+        Nodee6be083fa45cf7be_BB3d4de5858633f5ba [label="bb11"];
+        Nodee6be083fa45cf7be_BB894a65b14e8a5695 -> Nodee6be083fa45cf7be_BB3d4de5858633f5ba;
+        Nodee6be083fa45cf7be_BB84e1fae786f61c8f [label="terminate"];
+        Nodee6be083fa45cf7be_BB894a65b14e8a5695 -> Nodee6be083fa45cf7be_BB84e1fae786f61c8f;
+        Nodee6be083fa45cf7be_BB2086ba6d90fd48eb [label="bb5"];
+        Nodee6be083fa45cf7be_BBeac1dc9bb8b7859c -> Nodee6be083fa45cf7be_BB2086ba6d90fd48eb;
+        Nodee6be083fa45cf7be_BB9e9a909de5a3635b [label="unreachable.i"];
+        Nodee6be083fa45cf7be_BB11fc71cd1c2e3da4 -> Nodee6be083fa45cf7be_BB9e9a909de5a3635b;
+        Nodee6be083fa45cf7be_BB688d59a55cb45c57 [label="cleanup.i"];
+        Nodee6be083fa45cf7be_BB11fc71cd1c2e3da4 -> Nodee6be083fa45cf7be_BB688d59a55cb45c57;
+        Nodee6be083fa45cf7be_BBa486304289c3ae15 [label="Return"];
+        Nodee6be083fa45cf7be_BB3d4de5858633f5ba -> Nodee6be083fa45cf7be_BBa486304289c3ae15;
+        Nodee6be083fa45cf7be_BB5f903e496691755 [label="bb6"];
+        Nodee6be083fa45cf7be_BB2086ba6d90fd48eb -> Nodee6be083fa45cf7be_BB5f903e496691755;
+        Nodee6be083fa45cf7be_BB958be842402de34 [label="cleanup.body"];
+        Nodee6be083fa45cf7be_BB688d59a55cb45c57 -> Nodee6be083fa45cf7be_BB958be842402de34;
+        Nodee6be083fa45cf7be_BBc082569aea69b08b [label="bb7"];
+        Nodee6be083fa45cf7be_BB5f903e496691755 -> Nodee6be083fa45cf7be_BBc082569aea69b08b;
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a [label="cleanup"];
+        Nodee6be083fa45cf7be_BB5f903e496691755 -> Nodee6be083fa45cf7be_BB8813595e8fceb68a;
+        Nodee6be083fa45cf7be_BB81ac2b2651883822 [label="bb8"];
+        Nodee6be083fa45cf7be_BBc082569aea69b08b -> Nodee6be083fa45cf7be_BB81ac2b2651883822;
+        Nodee6be083fa45cf7be_BB8813595e8fceb68a [label="cleanup"];
+        Nodee6be083fa45cf7be_BBc082569aea69b08b -> Nodee6be083fa45cf7be_BB8813595e8fceb68a;
+        Nodee6be083fa45cf7be_BBa486304289c3ae15 [label="Return"];
+        Nodee6be083fa45cf7be_BB81ac2b2651883822 -> Nodee6be083fa45cf7be_BBa486304289c3ae15;
+
+    }
+    subgraph Node8a19e1fed456cb2a {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::ttf::TTFFile::load";
+        rankdir=TB;
+        Node8a19e1fed456cb2a_BB31b63380a252cd62 [label="ttf2mesh::ttf::TTFFile::load"];
+        Node8a19e1fed456cb2a_BB1db1feea5e86a057 [label="bb1"];
+        Node8a19e1fed456cb2a_BB31b63380a252cd62 -> Node8a19e1fed456cb2a_BB1db1feea5e86a057;
+        Node8a19e1fed456cb2a_BBadb51a2637edcca4 [label="bb2"];
+        Node8a19e1fed456cb2a_BB31b63380a252cd62 -> Node8a19e1fed456cb2a_BBadb51a2637edcca4;
+        Node8a19e1fed456cb2a_BB693ac12414dd0aca [label="bb4"];
+        Node8a19e1fed456cb2a_BB1db1feea5e86a057 -> Node8a19e1fed456cb2a_BB693ac12414dd0aca;
+        Node8a19e1fed456cb2a_BB693ac12414dd0aca [label="bb4"];
+        Node8a19e1fed456cb2a_BBadb51a2637edcca4 -> Node8a19e1fed456cb2a_BB693ac12414dd0aca;
+        Node8a19e1fed456cb2a_BBa486304289c3ae15 [label="Return"];
+        Node8a19e1fed456cb2a_BB693ac12414dd0aca -> Node8a19e1fed456cb2a_BBa486304289c3ae15;
+
+    }
+    subgraph Node3954ca3c76e8a01d {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::ttf::TTFFile::glyph_from_char";
+        rankdir=TB;
+        Node3954ca3c76e8a01d_BB31b63380a252cd62 [label="ttf2mesh::ttf::TTFFile::glyph_from_char", color=red];
+        Node3954ca3c76e8a01d_BB693ac12414dd0aca [label="bb4"];
+        Node3954ca3c76e8a01d_BB31b63380a252cd62 -> Node3954ca3c76e8a01d_BB693ac12414dd0aca;
+        Node3954ca3c76e8a01d_BB2086ba6d90fd48eb [label="bb5"];
+        Node3954ca3c76e8a01d_BB31b63380a252cd62 -> Node3954ca3c76e8a01d_BB2086ba6d90fd48eb;
+        Node3954ca3c76e8a01d_BB81ac2b2651883822 [label="bb8"];
+        Node3954ca3c76e8a01d_BB693ac12414dd0aca -> Node3954ca3c76e8a01d_BB81ac2b2651883822;
+        Node3954ca3c76e8a01d_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Node3954ca3c76e8a01d_BB2086ba6d90fd48eb -> Node3954ca3c76e8a01d_BB8b2c005df3a2621e;
+        Node3954ca3c76e8a01d_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node3954ca3c76e8a01d_BB2086ba6d90fd48eb -> Node3954ca3c76e8a01d_BB11fc71cd1c2e3da4;
+        Node3954ca3c76e8a01d_BBa486304289c3ae15 [label="Return"];
+        Node3954ca3c76e8a01d_BB81ac2b2651883822 -> Node3954ca3c76e8a01d_BBa486304289c3ae15;
+        Node3954ca3c76e8a01d_BB81ac2b2651883822 [label="bb8"];
+        Node3954ca3c76e8a01d_BB8b2c005df3a2621e -> Node3954ca3c76e8a01d_BB81ac2b2651883822;
+        Node3954ca3c76e8a01d_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node3954ca3c76e8a01d_BB11fc71cd1c2e3da4 -> Node3954ca3c76e8a01d_BB9e9a909de5a3635b;
+        Node3954ca3c76e8a01d_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node3954ca3c76e8a01d_BB11fc71cd1c2e3da4 -> Node3954ca3c76e8a01d_BB688d59a55cb45c57;
+        Node3954ca3c76e8a01d_BBa486304289c3ae15 [label="Return"];
+        Node3954ca3c76e8a01d_BB688d59a55cb45c57 -> Node3954ca3c76e8a01d_BBa486304289c3ae15;
+
+    }
+    subgraph Node93aed9ebfb9d4385 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::ttf::TTFFile::glyph_count";
+        rankdir=TB;
+        Node93aed9ebfb9d4385_BB31b63380a252cd62 [label="ttf2mesh::ttf::TTFFile::glyph_count"];
+        Node93aed9ebfb9d4385_BBd40ffbe880b44889 [label="bb3"];
+        Node93aed9ebfb9d4385_BB31b63380a252cd62 -> Node93aed9ebfb9d4385_BBd40ffbe880b44889;
+        Node93aed9ebfb9d4385_BBc2a541b5c707a483 [label="panic"];
+        Node93aed9ebfb9d4385_BB31b63380a252cd62 -> Node93aed9ebfb9d4385_BBc2a541b5c707a483;
+        Node93aed9ebfb9d4385_BB8b2c005df3a2621e [label="core::result::Result<T,E>::unwrap.exit"];
+        Node93aed9ebfb9d4385_BBd40ffbe880b44889 -> Node93aed9ebfb9d4385_BB8b2c005df3a2621e;
+        Node93aed9ebfb9d4385_BB11fc71cd1c2e3da4 [label="bb1.i"];
+        Node93aed9ebfb9d4385_BBd40ffbe880b44889 -> Node93aed9ebfb9d4385_BB11fc71cd1c2e3da4;
+        Node93aed9ebfb9d4385_BBa486304289c3ae15 [label="Return"];
+        Node93aed9ebfb9d4385_BB8b2c005df3a2621e -> Node93aed9ebfb9d4385_BBa486304289c3ae15;
+        Node93aed9ebfb9d4385_BB9e9a909de5a3635b [label="unreachable.i"];
+        Node93aed9ebfb9d4385_BB11fc71cd1c2e3da4 -> Node93aed9ebfb9d4385_BB9e9a909de5a3635b;
+        Node93aed9ebfb9d4385_BB688d59a55cb45c57 [label="cleanup.i"];
+        Node93aed9ebfb9d4385_BB11fc71cd1c2e3da4 -> Node93aed9ebfb9d4385_BB688d59a55cb45c57;
+        Node93aed9ebfb9d4385_BBa486304289c3ae15 [label="Return"];
+        Node93aed9ebfb9d4385_BB688d59a55cb45c57 -> Node93aed9ebfb9d4385_BBa486304289c3ae15;
+
+    }
+    subgraph Node70b1d2b988597bf9 {
+        style=filled;
+        color=lightgrey;
+        label="ttf2mesh::ttf::TTFFile::glyph_by_index";
+        rankdir=TB;
+        Node70b1d2b988597bf9_BB31b63380a252cd62 [label="ttf2mesh::ttf::TTFFile::glyph_by_index"];
+        Node70b1d2b988597bf9_BB81ac2b2651883822 [label="bb8"];
+        Node70b1d2b988597bf9_BB31b63380a252cd62 -> Node70b1d2b988597bf9_BB81ac2b2651883822;
+        Node70b1d2b988597bf9_BBc2a541b5c707a483 [label="panic"];
+        Node70b1d2b988597bf9_BB31b63380a252cd62 -> Node70b1d2b988597bf9_BBc2a541b5c707a483;
+        Node70b1d2b988597bf9_BB693ac12414dd0aca [label="bb4"];
+        Node70b1d2b988597bf9_BB81ac2b2651883822 -> Node70b1d2b988597bf9_BB693ac12414dd0aca;
+        Node70b1d2b988597bf9_BB2086ba6d90fd48eb [label="bb5"];
+        Node70b1d2b988597bf9_BB81ac2b2651883822 -> Node70b1d2b988597bf9_BB2086ba6d90fd48eb;
+        Node70b1d2b988597bf9_BBc082569aea69b08b [label="bb7"];
+        Node70b1d2b988597bf9_BB693ac12414dd0aca -> Node70b1d2b988597bf9_BBc082569aea69b08b;
+        Node70b1d2b988597bf9_BBc082569aea69b08b [label="bb7"];
+        Node70b1d2b988597bf9_BB2086ba6d90fd48eb -> Node70b1d2b988597bf9_BBc082569aea69b08b;
+        Node70b1d2b988597bf9_BBa486304289c3ae15 [label="Return"];
+        Node70b1d2b988597bf9_BBc082569aea69b08b -> Node70b1d2b988597bf9_BBa486304289c3ae15;
+
+    }
+    subgraph Nodecf2a04393f55c16 {
+        style=filled;
+        color=lightgrey;
+        label="<ttf2mesh::ttf::TTFFile as core::ops::drop::Drop>::drop";
+        rankdir=TB;
+        Nodecf2a04393f55c16_BB31b63380a252cd62 [label="<ttf2mesh::ttf::TTFFile as core::ops::drop::Drop>::drop", color=red];
+        Nodecf2a04393f55c16_BBa486304289c3ae15 [label="Return"];
+        Nodecf2a04393f55c16_BB31b63380a252cd62 -> Nodecf2a04393f55c16_BBa486304289c3ae15;
+
+    }
+
+}

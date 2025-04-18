@@ -1,0 +1,97 @@
+ffi:ttf_list_system_fonts
+None
+--------
+
+ffi:ttf_list_match_id
+None
+--------
+
+ffi:ttf_list_fonts
+None
+--------
+
+ffi:ttf_load_from_file
+None
+--------
+
+ffi:ttf_outline_evenodd_base
+None
+--------
+
+ffi:ttf_outline_evenodd
+None
+--------
+
+ffi:ttf_free_list
+None
+--------
+
+ffi:ttf_glyph2svgpath
+None
+--------
+
+ffi:ttf_glyph2mesh
+chain: 0
+Function: "ttf2mesh::glyph::Glyph::to_2d_mesh" file: "src/glyph.rs" line: 31 column: None
+Function: "ttf2mesh::glyph::Glyph::to_2d_mesh" file: "src/glyph.rs" line: 37 column: Some(13)
+--------
+
+ffi:ttf_export_to_obj
+None
+--------
+
+ffi:ttf_splitted_outline
+None
+--------
+
+ffi:ttf_free_mesh
+chain: 0
+Function: "<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::free" file: "src/mesh.rs" line: 106 column: None
+Function: "<ttf2mesh_sys::ttf_mesh as ttf2mesh::mesh::InnerMesh>::free" file: "src/mesh.rs" line: 107 column: Some(9)
+--------
+
+ffi:ttf_outline_contour_info
+None
+--------
+
+ffi:ttf_free_outline
+None
+--------
+
+ffi:ttf_free
+chain: 0
+Function: "<ttf2mesh::ttf::TTFFile as core::ops::drop::Drop>::drop" file: "src/ttf.rs" line: 144 column: None
+Function: "<ttf2mesh::ttf::TTFFile as core::ops::drop::Drop>::drop" file: "src/ttf.rs" line: 145 column: Some(18)
+--------
+
+ffi:ttf_list_match
+None
+--------
+
+ffi:ttf_find_glyph
+chain: 0
+Function: "ttf2mesh::ttf::TTFFile::glyph_from_char" file: "src/ttf.rs" line: 114 column: None
+Function: "ttf2mesh::ttf::TTFFile::glyph_from_char" file: "src/ttf.rs" line: 118 column: Some(30)
+--------
+
+ffi:ttf_load_from_mem
+chain: 0
+Function: "ttf2mesh::ttf::TTFFile::from_buffer_vec" file: "src/ttf.rs" line: 56 column: None
+--------
+
+ffi:ttf_linear_outline
+None
+--------
+
+ffi:ttf_glyph2mesh3d
+chain: 0
+Function: "ttf2mesh::glyph::Glyph::to_3d_mesh" file: "src/glyph.rs" line: 54 column: None
+Function: "ttf2mesh::glyph::Glyph::to_3d_mesh" file: "src/glyph.rs" line: 64 column: Some(13)
+--------
+
+ffi:ttf_free_mesh3d
+chain: 0
+Function: "<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::free" file: "src/mesh.rs" line: 140 column: None
+Function: "<ttf2mesh_sys::ttf_mesh3d as ttf2mesh::mesh::InnerMesh>::free" file: "src/mesh.rs" line: 141 column: Some(9)
+--------
+
