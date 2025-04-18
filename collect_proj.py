@@ -16,6 +16,13 @@ logger = logging.getLogger(__name__)
 # https://crates.io/api/v1/crates?category=api-bindings&page=50&per_page=100
 BASE_URL = "https://crates.io/api/v1"
 
+RUST_TOOLCHAIN = "nightly-2024-02-08-x86_64-unknown-linux-gnu"
+# cargo update serde --precise 1.0.196
+# cargo update zerofrom --precise 0.1.5
+# cargo update litemap --precise 0.7.4
+# cargo update native-tls --precise 0.2.13
+# cargo build -Zcheck-cfg
+
 def time_profiler(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -96,7 +103,7 @@ def clone_crate(url: str) -> bool:
 def init_submodule(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     logging.debug(f"\nInit submodule in {cwd}")
-    result = subprocess.run(["git", "submodule", "update", "--init"], cwd=cwd)
+    result = subprocess.run(["git", "submodule", "update", "--init", "--recursive"], cwd=cwd)
     if result.returncode == 0:
         logging.info(f"Init submodule in {cwd} success")
         return True
@@ -105,14 +112,49 @@ def init_submodule(dirname: str) -> bool:
         return False
     pass
 
+def override_toolchain(dirname: str) -> bool:
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
+    result = subprocess.run(["rustup", "override", "set", RUST_TOOLCHAIN], cwd=cwd)
+    subprocess.run(["cargo", "update", "serde", "--precise", "1.0.196"], cwd=cwd)
+    subprocess.run(["cargo", "update", "native-tls", "--precise", "0.2.13"], cwd=cwd)
+    subprocess.run(["cargo", "update", "zerofrom", "--precise", "0.1.5"], cwd=cwd)
+    subprocess.run(["cargo", "update", "litemap", "--precise", "0.7.4"], cwd=cwd)
+    if result.returncode == 0:
+        logging.info(f"Override toolchain in {cwd} success")
+        return True
+    else:
+        logging.error(f"Override toolchain in {cwd} failed")
+        return False
+
+def cargo_clean(dirname: str) -> bool:
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
+    logging.debug(f"\nClean {dirname} in {cwd}")
+    result = subprocess.run(["cargo", "clean"], cwd=cwd)
+    if result.returncode == 0:
+        logging.info(f"Clean {dirname} success")
+        return True
+    else:
+        logging.error(f"Clean {dirname} failed")
+        return False
+    pass
+
 @subprocess_time_profiler
 def build_crate(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
-    logging.debug(f"\nBuild {dirname} in {cwd}")
+    logging.info(f"\nBuild {dirname} in {cwd}")
+    result = subprocess.run(["cargo", "build", "-Zcheck-cfg"], cwd=cwd)
+    if result.returncode == 0:
+        logging.info(f"Build {dirname} success")
+        return True
+    else:
+        logging.error(f"Build {dirname} failed")
+        return False
+
+@subprocess_time_profiler
+def gen_crate_ir(dirname: str) -> bool:
     pass
 
-def cargo_clean(dirname: str) -> bool:
-    pass
+
 
 def init():
     os.mkdir("proj_collect")
@@ -120,8 +162,10 @@ def init():
     logging.info("Create directories: proj_collect, result_collect")
     df = pd.DataFrame(columns=[
         "name", "repository", "dirname", 
+        "valid_proj",
         "build_success", 
         "normal_build_time", 
+        "ffi_checker_success",
         "ffi_checker_build_time", 
         "ffi_checker_analysis_time"
     ])
@@ -139,20 +183,26 @@ def init():
             repository: str = crate['repository']
             if repository is None:
                 continue
+            if not repository.startswith("https://github"):
+                continue
             repository = repository.rstrip("/")
             dirname = repository.split("/")[-1].split(".")[0]
             if dirname is None or len(dirname) == 0:
                 logging.info(f"\nError: Crate: {name} No directory name found")
+            valid_proj = False
             build_success = False
             normal_build_time = None
+            ffi_checker_success = False
             ffi_checker_build_time = None
             ffi_checker_analysis_time = None
             crate_info = {
                 "name": name,
                 "repository": repository,
                 "dirname": dirname,
+                "valid_proj": valid_proj,
                 "build_success": build_success,
                 "normal_build_time": normal_build_time,
+                "ffi_checker_success": ffi_checker_success,
                 "ffi_checker_build_time": ffi_checker_build_time,
                 "ffi_checker_analysis_time": ffi_checker_analysis_time
             }
@@ -168,22 +218,54 @@ def build(args: argparse.Namespace) -> bool:
     df = pd.read_csv("crates.csv")
     skip_cnt = args.skip
     limit = args.limit
-    df = df.iloc[skip_cnt:skip_cnt+limit]
-    for index, row in df.iterrows():
-        logging.info("Building crate: {}".format(row['name']))
-        name = row['name']
-        repository = row['repository']
-        dirname = row['dirname']
+    target_df = df.iloc[skip_cnt:skip_cnt+limit]
+    all_success = True
+    for row in target_df.itertuples():
+        logging.debug(f"Row: {row}")
+        logging.info("Building crate: {}".format(row.name))
+        index = row.Index
+        name = row.name
+        repository = row.repository
+        dirname = row.dirname
         ret_clone, *clone_time = clone_crate(repository)
-        if ret_clone == False:
-            logging.info(f"Clone {repository} failed")
-            break
+        if not ret_clone:
+            all_success = False
+            logging.error(f"Clone {name} failed")
+            continue
         ret_submodule, *submodule_time = init_submodule(dirname)
-        if ret_submodule == False:
-            logging.info(f"Init submodule {dirname} failed")
-            break
+        if not ret_submodule:
+            all_success = False
+            logging.error(f"Init submodule {name} failed")
+            continue
+        ret_override = override_toolchain(dirname)
+
+        # download deps
+        ret_clean = cargo_clean(dirname)
+        ret_build, *build_time = build_crate(dirname)
+
+        ret_clean = cargo_clean(dirname)
+        ret_build, *build_time = build_crate(dirname)
+
+        if not (ret_clone and ret_submodule and ret_override and ret_clean and ret_build):
+            all_success = False
+            logging.error(f"Build {name} failed")
+            continue
+
+        normal_build_time_str = f"real_time:{build_time[0]:.2f}s, user_time:{build_time[1]:.2f}s, sys_time:{build_time[2]:.2f}s"
+
+        ret_clean = cargo_clean(dirname)
+        ret_gen_ir = gen_crate_ir(dirname)
+
+        if not ret_gen_ir or not ret_clean:
+            all_success = False
+            logging.error(f"Generate IR for {name} failed")
+            continue
         
-    pass
+        logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
+        df.loc[index, "build_success"] = ret_build
+        df.loc[index, "normal_build_time"] = normal_build_time_str
+    
+    df.to_csv("crates.csv", index=False)
 
 def clean(args: argparse.Namespace) -> bool:
     if args.skip is not None and args.limit is not None:
