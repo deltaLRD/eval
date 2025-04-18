@@ -380,7 +380,11 @@ def clean(args: argparse.Namespace) -> bool:
 
 @time_profiler
 def main():
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(
+        filename='new.log',
+        filemode='w',
+        level=logging.DEBUG
+    )
     parser = argparse.ArgumentParser(
                     prog='collect_proj',
                     description='A Script to eval FFI Checker',
