@@ -300,6 +300,8 @@ def build(args: argparse.Namespace) -> bool:
     skip_cnt = args.skip
     limit = args.limit
     target_df = df.iloc[skip_cnt:skip_cnt+limit]
+    if args.valid_only:
+        target_df = target_df[target_df["valid_proj"] == True]
     all_success = True
     for row in target_df.itertuples():
         logging.debug(f"Row: {row}")
@@ -410,6 +412,7 @@ def main():
     build_parser = subparsers.add_parser("build", help="Rebuild all crates in the crates list")
     build_parser.add_argument("--skip", type=int, default=0, help="Skip the first n crates")
     build_parser.add_argument("--limit", type=int, default=10, help="Limit the number of crates to build")
+    build_parser.add_argument("--valid-only", type=bool, default=False, help="Build only valid crates")
 
     analysis_parser = subparsers.add_parser("analysis", help="Analyze the crates list")
     analysis_parser.add_argument("--skip", type=int, default=0, help="Skip the first n crates")
