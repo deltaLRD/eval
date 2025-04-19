@@ -264,12 +264,11 @@ def analyze_crate(dirname: str) -> bool:
 def cp_result(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     dest_dir = os.path.join(os.getcwd(), "result_collect", dirname)
-    output_dir = os.path.join(dest_dir, dirname)
     shutil.rmtree(dest_dir, ignore_errors=True)
-    os.mkdir(output_dir)
-    shutil.copyfile(os.path.join(cwd, "call_graph.dot"), os.path.join(output_dir, "call_graph.dot"))
-    shutil.copyfile(os.path.join(cwd, "control_flow_graph.dot"), os.path.join(output_dir, "control_flow_graph.dot"))
-    shutil.copyfile(os.path.join(cwd, "interface.json"), os.path.join(output_dir, "interface.json"))
+    os.mkdir(dest_dir)
+    shutil.copyfile(os.path.join(cwd, "call_graph.dot"), os.path.join(dest_dir, "call_graph.dot"))
+    shutil.copyfile(os.path.join(cwd, "control_flow_graph.dot"), os.path.join(dest_dir, "control_flow_graph.dot"))
+    shutil.copyfile(os.path.join(cwd, "interface.json"), os.path.join(dest_dir, "interface.json"))
     pass
 
 def init():
