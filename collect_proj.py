@@ -94,11 +94,11 @@ def get_crates(page: int, per_page: int, category: str) -> list:
     pass
 
 @subprocess_time_profiler
-def clone_crate(url: str) -> bool:
+def clone_crate(url: str, dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect")
     logging.debug(f"\nClone {url} to {cwd}")
     try:
-        result = subprocess.run(["git", "clone", url], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        result = subprocess.run(["git", "clone", url, dirname], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
         if result.returncode == 0:
             logging.info(f"Clone {url} success")
             return True
@@ -301,7 +301,7 @@ def build(args: argparse.Namespace) -> bool:
         name = row.name
         repository = row.repository
         dirname = row.dirname
-        ret_clone, *clone_time = clone_crate(repository)
+        ret_clone, *clone_time = clone_crate(repository, dirname)
         if not ret_clone:
             all_success = False
             logging.error(f"Clone {name} failed")
