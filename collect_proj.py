@@ -19,6 +19,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://crates.io/api/v1"
 SUB_PROCESS_TIMEOUT = 60 * 30
 RUST_TOOLCHAIN = "nightly-2024-02-08-x86_64-unknown-linux-gnu"
+EXCLUDE_CRATE = {
+    "google-api-proto", # This crate is so big that it takes too long to clone and build 
+}
 # cargo update serde --precise 1.0.203
 # cargo update zerofrom --precise 0.1.5
 # cargo update litemap --precise 0.7.4
@@ -236,6 +239,37 @@ def check_valid(dirname: str) -> bool:
     else:
         return True
 
+@subprocess_time_profiler
+def analyze_crate(dirname: str) -> bool:
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
+    logging.info(f"Analyze {dirname} in {cwd}")
+    try:
+        result = subprocess.run(["cargo", "ffi-analyzer", "analyze"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        if result.returncode == 0:
+            logging.info(f"Analyze {dirname} success")
+            return True
+        else:
+            logging.error(f"Analyze {dirname} failed")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
+            return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
+        return False
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
+
+
+def cp_result(dirname: str) -> bool:
+    cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
+    dest_dir = os.path.join(os.getcwd(), "result_collect", dirname)
+    output_dir = os.path.join(dest_dir, dirname)
+    os.mkdir(output_dir, exist_ok=True)
+    shutil.copyfile(os.path.join(cwd, "call_graph.dot"), os.path.join(output_dir, "call_graph.dot"))
+    shutil.copyfile(os.path.join(cwd, "control_flow_graph.dot"), os.path.join(output_dir, "control_flow_graph.dot"))
+    shutil.copyfile(os.path.join(cwd, "interface.json"), os.path.join(output_dir, "interface.json"))
+    pass
 
 def init():
     os.mkdir("proj_collect")
@@ -265,6 +299,8 @@ def init():
             if repository is None:
                 continue
             if not repository.startswith("https://github"):
+                continue
+            if name in EXCLUDE_CRATE:
                 continue
             repository = repository.rstrip("/")
             dirname = repository.split("/")[-1].split(".")[0]
@@ -345,6 +381,18 @@ def build(args: argparse.Namespace) -> bool:
             continue
 
         ret_valid = check_valid(dirname)
+
+        if ret_valid:
+            ret_analysis, *analysis_time = analyze_crate(dirname)
+            if not ret_analysis:
+                all_success = False
+                logging.error(f"Analyze {name} failed")
+                continue
+            ffi_checker_analysis_time_str = f"real_time:{analysis_time[0]:.2f}s, user_time:{analysis_time[1]:.2f}s, sys_time:{analysis_time[2]:.2f}s"
+            df.loc[index, "ffi_checker_analysis_time"] = ffi_checker_analysis_time_str
+            cargo_clean(dirname)
+            crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
+            shutil.rmtree(crate_dir)
         
         logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
         df.loc[index, "build_success"] = ret_build

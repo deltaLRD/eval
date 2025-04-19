@@ -1,16 +1,17 @@
 # FFI-Checker Eval
 
 ## 使用 gh 配置好git的github登录
-
+cmake 版本最好高一点，ubuntu默认自带的可能不够
 ```bash
 sudo apt update
 sudo apt upgrade
 sudo apt install gh 
-sudo apt install libssl-dev pkg-config build-essential cmake libudev-dev -y
+sudo apt install libssl-dev pkg-config build-essential cmake libudev-dev graphviz libzstd-dev libtinfo-dev libxml2-dev -y
 gh auth login
 ```
 
 ## 安装LLVM17
+实测 ubuntu 24.04 可以用在ubuntu22.04上预编译的llvm
 ```bash
 cd ~
 wget https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz
@@ -53,6 +54,10 @@ cd ~
 ## 获取 ffi-anlysis
 
 ```bash
+git clone https://github.com/deltaLRD/ffi-analyzer.git
+cd ffi-analyzer
+cargo install --path .
+cd ~
 ```
 
 ## 安装miniconda
