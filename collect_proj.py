@@ -278,7 +278,11 @@ def render_graph(dirname: str) -> bool:
     control_flow_graph = os.path.join(dest_dir, "control_flow_graph.dot")
     try:
         if os.path.exists(call_graph):
-            result = subprocess.run(["dot", "-Tsvg", call_graph, "-o", os.path.join(dest_dir, "call_graph.svg")], timeout=SUB_PROCESS_TIMEOUT)
+            # 3000000
+            if os.path.getsize(call_graph) > 3000000:
+                logging.error(f"Call graph {call_graph} is too large")
+                return False
+            result = subprocess.run(["dot", "-Tpdf", call_graph, "-o", os.path.join(dest_dir, "call_graph.pdf")], timeout=SUB_PROCESS_TIMEOUT)
             if result.returncode == 0:
                 logging.info(f"Render {call_graph} success")
             else:
@@ -287,7 +291,10 @@ def render_graph(dirname: str) -> bool:
                 logging.error(f"Error stdout: \n{result.stdout}")
                 return False
         if os.path.exists(control_flow_graph):
-            result = subprocess.run(["dot", "-Tsvg", control_flow_graph, "-o", os.path.join(dest_dir, "control_flow_graph.svg")], timeout=SUB_PROCESS_TIMEOUT)
+            if os.path.getsize(control_flow_graph) > 3000000:
+                logging.error(f"Call graph {call_graph} is too large")
+                return False
+            result = subprocess.run(["dot", "-Tpdf", control_flow_graph, "-o", os.path.join(dest_dir, "control_flow_graph.pdf")], timeout=SUB_PROCESS_TIMEOUT)
             if result.returncode == 0:
                 logging.info(f"Render {control_flow_graph} success")
             else:
