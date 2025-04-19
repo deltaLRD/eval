@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://crates.io/api/v1"
 SUB_PROCESS_TIMEOUT = 60 * 30
 RUST_TOOLCHAIN = "nightly-2024-02-08-x86_64-unknown-linux-gnu"
-# cargo update serde --precise 1.0.196
+# cargo update serde --precise 1.0.203
 # cargo update zerofrom --precise 0.1.5
 # cargo update litemap --precise 0.7.4
 # cargo update native-tls --precise 0.2.13
@@ -140,7 +140,7 @@ def override_toolchain(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     try:
         result = subprocess.run(["rustup", "override", "set", RUST_TOOLCHAIN], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
-        subprocess.run(["cargo", "update", "serde", "--precise", "1.0.196"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        subprocess.run(["cargo", "update", "serde", "--precise", "1.0.203"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
         subprocess.run(["cargo", "update", "native-tls", "--precise", "0.2.13"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
         subprocess.run(["cargo", "update", "zerofrom", "--precise", "0.1.5"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
         subprocess.run(["cargo", "update", "litemap", "--precise", "0.7.4"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
@@ -301,6 +301,7 @@ def build(args: argparse.Namespace) -> bool:
     limit = args.limit
     target_df = df.iloc[skip_cnt:skip_cnt+limit]
     if args.valid_only:
+        print("Build Valid Proj Only")
         target_df = target_df[target_df["valid_proj"] == True]
     all_success = True
     for row in target_df.itertuples():

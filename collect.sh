@@ -18,7 +18,7 @@ for proj_path in ./proj_collect/*; do
     #    -exec mv -v {} "$dest_dir" \;
     find "${proj_path}" -name "call_graph.dot" -exec mv {} "${dest_dir}/" \;
     find "${proj_path}" -name "control_flow_graph.dot" -exec mv {} "${dest_dir}/" \;
-    find "${proj_path}" -name "interface.txt" -exec mv {} "${dest_dir}/" \;
+    find "${proj_path}" -name "interface.json" -exec mv {} "${dest_dir}/" \;
 done
 
 echo "文件移动完成！请检查目标目录：./result_collect/"
