@@ -104,7 +104,8 @@ def clone_crate(url: str, dirname: str) -> bool:
             return True
         else:
             logging.error(f"Clone {url} failed")
-            logging.error(f"Error: {result.stderr}")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
             return False
     except subprocess.TimeoutExpired:
         logging.error(f"Clone {url} timeout")
@@ -124,7 +125,8 @@ def init_submodule(dirname: str) -> bool:
             return True
         else:
             logging.error(f"Init submodule in {cwd} failed")
-            logging.error(f"Error: {result.stderr}")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
             return False
     except subprocess.TimeoutExpired:
         logging.error(f"Clone {url} timeout")
@@ -147,7 +149,8 @@ def override_toolchain(dirname: str) -> bool:
             return True
         else:
             logging.error(f"Override toolchain in {cwd} failed")
-            logging.error(f"Error: {result.stderr}")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
             return False
     except subprocess.TimeoutExpired:
         logging.error(f"Clone {url} timeout")
@@ -166,7 +169,8 @@ def cargo_clean(dirname: str) -> bool:
         return True
     else:
         logging.error(f"Clean {dirname} failed")
-        logging.error(f"Error: {result.stderr}")
+        logging.error(f"Error stderr: \n{result.stderr}")
+        logging.error(f"Error stdout: \n{result.stdout}")
         return False
     pass
 
@@ -181,7 +185,8 @@ def build_crate(dirname: str) -> bool:
             return True
         else:
             logging.error(f"Build {dirname} failed")
-            logging.error(f"Error: {result.stderr}")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
             return False
     except subprocess.TimeoutExpired:
         logging.error(f"Clone {url} timeout")
@@ -202,7 +207,8 @@ def gen_crate_ir(dirname: str) -> bool:
             return True
         else:
             logging.error(f"Gen IR {dirname} failed")
-            logging.error(f"Error: {result.stderr}")
+            logging.error(f"Error stderr: \n{result.stderr}")
+            logging.error(f"Error stdout: \n{result.stdout}")
             return False
     except subprocess.TimeoutExpired:
         logging.error(f"Clone {url} timeout")
