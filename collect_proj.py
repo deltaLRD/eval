@@ -15,6 +15,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 # https://crates.io/api/v1/crates?category=api-bindings&page=50&per_page=100
+# &sort=recent-downloads
 BASE_URL = "https://crates.io/api/v1"
 SUB_PROCESS_TIMEOUT = 60 * 30
 RUST_TOOLCHAIN = "nightly-2024-02-08-x86_64-unknown-linux-gnu"
@@ -82,7 +83,7 @@ def get_total_crates(category: str) -> int:
 
 @time_profiler
 def get_crates(page: int, per_page: int, category: str) -> list:
-    url = f"{BASE_URL}/crates?category={category}&page={page}&per_page={per_page}"
+    url = f"{BASE_URL}/crates?category={category}&page={page}&per_page={per_page}&sort=recent-downloads"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
