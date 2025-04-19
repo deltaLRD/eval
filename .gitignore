@@ -1,5 +1,5 @@
 proj_collect/*
 result_collect/*
 *.zip
-*.csv
+crates.csv
 *.log
