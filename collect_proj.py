@@ -261,7 +261,7 @@ def analyze_crate(dirname: str) -> bool:
         return False
 
 
-def cp_result(dirname: str) -> bool:
+def cp_result(dirname: str):
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     dest_dir = os.path.join(os.getcwd(), "result_collect", dirname)
     shutil.rmtree(dest_dir, ignore_errors=True)
@@ -270,6 +270,38 @@ def cp_result(dirname: str) -> bool:
     shutil.copyfile(os.path.join(cwd, "control_flow_graph.dot"), os.path.join(dest_dir, "control_flow_graph.dot"))
     shutil.copyfile(os.path.join(cwd, "interface.json"), os.path.join(dest_dir, "interface.json"))
     pass
+
+@subprocess_time_profiler
+def render_graph(dirname: str) -> bool:
+    dest_dir = os.path.join(os.getcwd(), "result_collect", dirname)
+    call_graph = os.path.join(dest_dir, "call_graph.dot")
+    control_flow_graph = os.path.join(dest_dir, "control_flow_graph.dot")
+    try:
+        if os.path.exists(call_graph):
+            result = subprocess.run(["dot", "-Tsvg", call_graph, "-o", os.path.join(dest_dir, "call_graph.svg")], timeout=SUB_PROCESS_TIMEOUT)
+            if result.returncode == 0:
+                logging.info(f"Render {call_graph} success")
+            else:
+                logging.error(f"Render {call_graph} failed")
+                logging.error(f"Error stderr: \n{result.stderr}")
+                logging.error(f"Error stdout: \n{result.stdout}")
+                return False
+        if os.path.exists(control_flow_graph):
+            result = subprocess.run(["dot", "-Tsvg", control_flow_graph, "-o", os.path.join(dest_dir, "control_flow_graph.svg")], timeout=SUB_PROCESS_TIMEOUT)
+            if result.returncode == 0:
+                logging.info(f"Render {control_flow_graph} success")
+            else:
+                logging.error(f"Render {control_flow_graph} failed")
+                logging.error(f"Error stderr: \n{result.stderr}")
+                logging.error(f"Error stdout: \n{result.stdout}")
+                return False
+    except subprocess.TimeoutExpired:
+        logging.error(f"Clone {url} timeout")
+        return False
+    except Exception as e:
+        logging.error(f"Clone {url} failed: {e}")
+        return False
+    return True
 
 def init():
     os.mkdir("proj_collect")
@@ -391,9 +423,9 @@ def build(args: argparse.Namespace) -> bool:
             cp_result(dirname)
             ffi_checker_analysis_time_str = f"real_time:{analysis_time[0]:.2f}s, user_time:{analysis_time[1]:.2f}s, sys_time:{analysis_time[2]:.2f}s"
             df.loc[index, "ffi_checker_analysis_time"] = ffi_checker_analysis_time_str
-            cargo_clean(dirname)
             crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
             shutil.rmtree(crate_dir, ignore_errors=True)
+            render_graph(dirname)
         
         logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
         df.loc[index, "build_success"] = ret_build
@@ -405,7 +437,7 @@ def build(args: argparse.Namespace) -> bool:
         # save data each time
         df.to_csv("crates.csv", index=False)
     
-
+@time_profiler
 def clean(args: argparse.Namespace) -> bool:
     if args.skip is not None and args.limit is not None:
         df = pd.read_csv("crates.csv")
