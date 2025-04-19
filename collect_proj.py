@@ -265,7 +265,8 @@ def cp_result(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     dest_dir = os.path.join(os.getcwd(), "result_collect", dirname)
     output_dir = os.path.join(dest_dir, dirname)
-    os.mkdir(output_dir, exist_ok=True)
+    shutil.rmtree(dest_dir, ignore_errors=True)
+    os.mkdir(output_dir)
     shutil.copyfile(os.path.join(cwd, "call_graph.dot"), os.path.join(output_dir, "call_graph.dot"))
     shutil.copyfile(os.path.join(cwd, "control_flow_graph.dot"), os.path.join(output_dir, "control_flow_graph.dot"))
     shutil.copyfile(os.path.join(cwd, "interface.json"), os.path.join(output_dir, "interface.json"))
@@ -388,11 +389,12 @@ def build(args: argparse.Namespace) -> bool:
                 all_success = False
                 logging.error(f"Analyze {name} failed")
                 continue
+            cp_result(dirname)
             ffi_checker_analysis_time_str = f"real_time:{analysis_time[0]:.2f}s, user_time:{analysis_time[1]:.2f}s, sys_time:{analysis_time[2]:.2f}s"
             df.loc[index, "ffi_checker_analysis_time"] = ffi_checker_analysis_time_str
             cargo_clean(dirname)
             crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
-            shutil.rmtree(crate_dir)
+            shutil.rmtree(crate_dir, ignore_errors=True)
         
         logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
         df.loc[index, "build_success"] = ret_build
@@ -415,7 +417,7 @@ def clean(args: argparse.Namespace) -> bool:
             logging.info("Cleaning crate: {}".format(row['name']))
             dirname = row['dirname']
             if os.path.exists(os.path.join("proj_collect", dirname)):
-                shutil.rmtree(os.path.join("proj_collect", dirname))
+                shutil.rmtree(os.path.join("proj_collect", dirname), ignore_errors=True)
                 logging.info(f"Clean {dirname} success")
             else:
                 logging.info(f"Clean {dirname} failed, directory does not exist")
@@ -426,12 +428,12 @@ def clean(args: argparse.Namespace) -> bool:
         else:
             logging.info("File does not exists")
         if os.path.exists("proj_collect"):
-            shutil.rmtree("proj_collect")
+            shutil.rmtree("proj_collect", ignore_errors=True)
             logging.info('proj_collect directory deleted')
         else:
             logging.info("proj_collect Directory does not exists")
         if os.path.exists("result_collect"):
-            shutil.rmtree("result_collect")
+            shutil.rmtree("result_collect", ignore_errors=True)
             logging.info('result_collect directory deleted')
         else:
             logging.info("result_collect Directory does not exists")
