@@ -244,7 +244,7 @@ def analyze_crate(dirname: str) -> bool:
     cwd = os.path.join(os.getcwd(), "proj_collect", dirname)
     logging.info(f"Analyze {dirname} in {cwd}")
     try:
-        result = subprocess.run(["cargo", "ffi-analyzer", "analyze"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
+        result = subprocess.run(["cargo", "ffi-analyzer"], cwd=cwd, timeout=SUB_PROCESS_TIMEOUT)
         if result.returncode == 0:
             logging.info(f"Analyze {dirname} success")
             return True
@@ -278,8 +278,8 @@ def render_graph(dirname: str) -> bool:
     control_flow_graph = os.path.join(dest_dir, "control_flow_graph.dot")
     try:
         if os.path.exists(call_graph):
-            # 3000000
-            if os.path.getsize(call_graph) > 3000000:
+            # 4000000
+            if os.path.getsize(call_graph) > 4000000:
                 logging.error(f"Call graph {call_graph} is too large")
                 return False
             result = subprocess.run(["dot", "-Tpdf", call_graph, "-o", os.path.join(dest_dir, "call_graph.pdf")], timeout=SUB_PROCESS_TIMEOUT)
@@ -405,6 +405,8 @@ def build(args: argparse.Namespace) -> bool:
         if not (ret_clone and ret_submodule and ret_override and ret_clean and ret_build):
             all_success = False
             logging.error(f"Build {name} failed")
+            crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
+            shutil.rmtree(crate_dir, ignore_errors=True)
             continue
 
         normal_build_time_str = f"real_time:{build_time[0]:.2f}s, user_time:{build_time[1]:.2f}s, sys_time:{build_time[2]:.2f}s"
@@ -417,6 +419,8 @@ def build(args: argparse.Namespace) -> bool:
         if not ret_gen_ir or not ret_clean:
             all_success = False
             logging.error(f"Generate IR for {name} failed")
+            crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
+            shutil.rmtree(crate_dir, ignore_errors=True)
             continue
 
         ret_valid = check_valid(dirname)
@@ -430,9 +434,10 @@ def build(args: argparse.Namespace) -> bool:
             cp_result(dirname)
             ffi_checker_analysis_time_str = f"real_time:{analysis_time[0]:.2f}s, user_time:{analysis_time[1]:.2f}s, sys_time:{analysis_time[2]:.2f}s"
             df.loc[index, "ffi_checker_analysis_time"] = ffi_checker_analysis_time_str
+            render_graph(dirname)
+        else:
             crate_dir = os.path.join(os.getcwd(), "proj_collect", dirname)
             shutil.rmtree(crate_dir, ignore_errors=True)
-            render_graph(dirname)
         
         logging.debug(f"Build {name}\tIndex:{index}\tresult:{ret_build}")
         df.loc[index, "build_success"] = ret_build
